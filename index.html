@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Johannes Schmid | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --canvas: #ededed;
+        --text: #303030;
+        --muted: #6b6b6b;
+        --line: #d8d8d8;
+        --green: #0b9d8a;
+        --yellow: #f0ce6b;
+        --orange: #ef662d;
+        --lavender: #9ea2ff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: 'DM Sans', sans-serif;
+        color: var(--text);
+        background: var(--canvas);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      .display {
+        font-family: 'Space Grotesk', sans-serif;
+        letter-spacing: -0.03em;
+      }
+
+      .shell {
+        width: min(1080px, 92vw);
+        margin: 0 auto;
+      }
+
+      .circle-art {
+        position: relative;
+        width: 250px;
+        height: 160px;
+      }
+
+      .shape {
+        position: absolute;
+        border-radius: 999px;
+      }
+
+      .shape-left {
+        width: 92px;
+        height: 92px;
+        background: var(--green);
+        border: 16px solid #4f4cae;
+        top: 0;
+        left: 0;
+      }
+
+      .shape-right {
+        width: 135px;
+        height: 135px;
+        background: var(--yellow);
+        right: 0;
+        top: 20px;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+      }
+
+      .burst {
+        width: 95px;
+        height: 95px;
+        background: repeating-conic-gradient(from 0deg, #f58bb6 0deg 8deg, transparent 8deg 16deg);
+        border-radius: 999px;
+      }
+
+      .shape-star {
+        width: 52px;
+        height: 52px;
+        background: #f4bf5f;
+        bottom: 0;
+        left: 12px;
+        display: grid;
+        place-items: center;
+      }
+
+      .shape-star::before {
+        content: '';
+        width: 22px;
+        height: 22px;
+        background: #fef3db;
+        clip-path: polygon(50% 0%, 61% 38%, 100% 50%, 61% 62%, 50% 100%, 39% 62%, 0% 50%, 39% 38%);
+      }
+
+      .logo-row,
+      .service-grid,
+      .work-grid,
+      .clients-grid {
+        border-top: 1px solid var(--line);
+      }
+
+      .work-card,
+      .testimonial {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .work-tile {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .img-overlay,
+      .img-multiply {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+
+      .img-overlay {
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.24), transparent 50%);
+      }
+
+      .img-multiply {
+        mix-blend-mode: multiply;
+        opacity: 0.25;
+      }
+
+      a,
+      button {
+        transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1), opacity 260ms cubic-bezier(0.22, 1, 0.36, 1),
+          box-shadow 260ms cubic-bezier(0.22, 1, 0.36, 1), background-color 260ms cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      a:hover,
+      button:hover {
+        transform: translateY(-2px);
+      }
+
+      a:active,
+      button:active {
+        transform: translateY(0);
+      }
+
+      a:focus-visible,
+      button:focus-visible,
+      input:focus-visible,
+      textarea:focus-visible {
+        outline: 2px solid #1f1f1f;
+        outline-offset: 2px;
+      }
+
+      input,
+      textarea {
+        background: #f4f4f4;
+        border: 1px solid #e8e8e8;
+      }
+
+      .service-icon {
+        width: 54px;
+        height: 54px;
+        border-radius: 999px;
+        margin: 0 auto 16px;
+        background: linear-gradient(180deg, #dbdbdb, #cacaca);
+      }
+
+      .social-link {
+        width: 24px;
+        height: 24px;
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .noise {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.05;
+        z-index: 0;
+      }
+
+      main,
+      header,
+      footer {
+        position: relative;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <svg class="noise" xmlns="http://www.w3.org/2000/svg">
+      <filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch" /></filter>
+      <rect width="100%" height="100%" filter="url(#n)" opacity="0.4" />
+    </svg>
+
+    <header class="shell py-8 md:py-10">
+      <nav class="flex items-center justify-between text-[11px] font-medium">
+        <a href="#" class="display">Logo</a>
+        <ul class="flex items-center gap-4 md:gap-8">
+          <li><a href="#about">About</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="shell pb-20">
+      <section id="about" class="grid gap-8 pb-12 pt-5 md:grid-cols-[1fr_280px] md:items-center md:gap-12">
+        <div>
+          <p class="text-xs font-medium text-zinc-500">Product management</p>
+          <h1 class="display mt-3 max-w-[420px] text-4xl leading-[1.02] md:text-[60px]">Johannes Schmid portfolio</h1>
+          <p class="mt-4 max-w-[420px] text-sm leading-[1.7] text-zinc-500">
+            Product manager focused on user-centric product development, AI delivery, and measurable business outcomes.
+          </p>
+        </div>
+        <div class="circle-art justify-self-start md:justify-self-end" aria-hidden="true">
+          <div class="shape shape-left"></div>
+          <div class="shape shape-right"><div class="burst"></div></div>
+          <div class="shape shape-star"></div>
+        </div>
+      </section>
+
+      <section class="logo-row grid grid-cols-3 gap-y-6 py-8 text-center text-base font-semibold md:grid-cols-6">
+        <span>Bē</span>
+        <span>Google</span>
+        <span>Apple</span>
+        <span>dribbble</span>
+        <span>awwwards</span>
+        <span>LinkedIn</span>
+      </section>
+
+      <section class="service-grid mt-3 grid gap-10 py-12 md:grid-cols-3 md:gap-7">
+        <article class="text-center">
+          <div class="service-icon"></div>
+          <h3 class="display text-lg">Product strategy</h3>
+          <p class="mt-2 text-xs leading-[1.7] text-zinc-500">
+            End-to-end roadmap definition with clear value hypotheses and delivery milestones.
+          </p>
+          <a class="mt-3 inline-block text-xs font-semibold" href="#">Learn more at LinkedIn</a>
+        </article>
+        <article class="text-center">
+          <div class="service-icon"></div>
+          <h3 class="display text-lg">AI execution</h3>
+          <p class="mt-2 text-xs leading-[1.7] text-zinc-500">
+            Retrieval-augmented workflows, model ops, and evaluation frameworks for product teams.
+          </p>
+          <a class="mt-3 inline-block text-xs font-semibold" href="#">Learn more at LinkedIn</a>
+        </article>
+        <article class="text-center">
+          <div class="service-icon"></div>
+          <h3 class="display text-lg">Leadership</h3>
+          <p class="mt-2 text-xs leading-[1.7] text-zinc-500">
+            Cross-functional alignment across engineering, design, and go-to-market stakeholders.
+          </p>
+          <a class="mt-3 inline-block text-xs font-semibold" href="#">Learn more at LinkedIn</a>
+        </article>
+      </section>
+
+      <section id="work" class="pt-3">
+        <h2 class="display mb-6 text-center text-2xl">My latest work</h2>
+        <div class="work-grid grid gap-x-7 gap-y-10 py-9 md:grid-cols-3">
+          <a class="work-card" href="#">
+            <div class="work-tile" style="background:#ef5f2b">
+              <img src="https://placehold.co/460x460" alt="RAG optimization product" class="h-full w-full object-cover opacity-70" />
+              <div class="img-overlay"></div>
+              <div class="img-multiply" style="background:#cf3f00"></div>
+            </div>
+            <h3 class="mt-3 display text-sm">RAG Optimization</h3>
+            <p class="text-xs text-zinc-500">Product Leadership</p>
+          </a>
+          <a class="work-card" href="#">
+            <div class="work-tile" style="background:#e4bfcf">
+              <img src="https://placehold.co/460x460" alt="Migration platform architecture" class="h-full w-full object-cover opacity-70" />
+              <div class="img-overlay"></div>
+              <div class="img-multiply" style="background:#b98fd7"></div>
+            </div>
+            <h3 class="mt-3 display text-sm">Relocation AI Platform</h3>
+            <p class="text-xs text-zinc-500">Sofly</p>
+          </a>
+          <a class="work-card" href="#">
+            <div class="work-tile" style="background:#059a86">
+              <img src="https://placehold.co/460x460" alt="B2B SaaS portfolio strategy" class="h-full w-full object-cover opacity-70" />
+              <div class="img-overlay"></div>
+              <div class="img-multiply" style="background:#00675e"></div>
+            </div>
+            <h3 class="mt-3 display text-sm">Growth Playbooks</h3>
+            <p class="text-xs text-zinc-500">Rentman</p>
+          </a>
+          <a class="work-card" href="#">
+            <div class="work-tile" style="background:#8ea4ff">
+              <img src="https://placehold.co/460x460" alt="Agile transformation initiative" class="h-full w-full object-cover opacity-70" />
+              <div class="img-overlay"></div>
+              <div class="img-multiply" style="background:#5e6df2"></div>
+            </div>
+            <h3 class="mt-3 display text-sm">Agile PM Framework</h3>
+            <p class="text-xs text-zinc-500">Team Enablement</p>
+          </a>
+          <a class="work-card" href="#">
+            <div class="work-tile" style="background:#f0ce6b">
+              <img src="https://placehold.co/460x460" alt="Product analytics model" class="h-full w-full object-cover opacity-70" />
+              <div class="img-overlay"></div>
+              <div class="img-multiply" style="background:#ccab48"></div>
+            </div>
+            <h3 class="mt-3 display text-sm">Experiment Library</h3>
+            <p class="text-xs text-zinc-500">User Research</p>
+          </a>
+          <a class="work-card" href="#">
+            <div class="work-tile" style="background:#afd3c5">
+              <img src="https://placehold.co/460x460" alt="Stakeholder reporting" class="h-full w-full object-cover opacity-70" />
+              <div class="img-overlay"></div>
+              <div class="img-multiply" style="background:#7ab0a0"></div>
+            </div>
+            <h3 class="mt-3 display text-sm">Executive Reporting</h3>
+            <p class="text-xs text-zinc-500">Governance</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="pt-5">
+        <h2 class="display mb-6 text-center text-2xl">Clients</h2>
+        <div class="clients-grid grid gap-5 py-8 md:grid-cols-3">
+          <a href="#" class="testimonial border border-[#e1d7c4] bg-[#f3ecdd] p-5">
+            <p class="text-xs leading-[1.7]">"Johannes turned fragmented requirements into a clear AI roadmap with visible impact in one quarter."</p>
+            <div class="mt-8 flex items-center gap-3">
+              <div class="h-8 w-8 rounded-full bg-zinc-500"></div>
+              <div>
+                <p class="text-[11px] font-semibold">Client Review</p>
+                <p class="text-[11px] text-zinc-500">Google</p>
+              </div>
+            </div>
+          </a>
+          <a href="#" class="testimonial border border-[#e1d7c4] bg-[#f3ecdd] p-5">
+            <p class="text-xs leading-[1.7]">"Strong mix of product thinking and operational discipline. Teams shipped faster with better quality."</p>
+            <div class="mt-8 flex items-center gap-3">
+              <div class="h-8 w-8 rounded-full bg-zinc-500"></div>
+              <div>
+                <p class="text-[11px] font-semibold">Client Review</p>
+                <p class="text-[11px] text-zinc-500">Scale-up Team</p>
+              </div>
+            </div>
+          </a>
+          <a href="#" class="testimonial border border-[#e1d7c4] bg-[#f3ecdd] p-5">
+            <p class="text-xs leading-[1.7]">"Excellent stakeholder communication and measurable improvement in adoption across markets."</p>
+            <div class="mt-8 flex items-center gap-3">
+              <div class="h-8 w-8 rounded-full bg-zinc-500"></div>
+              <div>
+                <p class="text-[11px] font-semibold">Client Review</p>
+                <p class="text-[11px] text-zinc-500">Enterprise SaaS</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section id="contact" class="mt-5 border-t border-[var(--line)] py-12">
+        <div class="grid gap-8 md:grid-cols-[1fr_1.3fr] md:gap-10">
+          <div>
+            <h2 class="display text-3xl">Let's work together</h2>
+            <p class="mt-4 max-w-[380px] text-xs leading-[1.7] text-zinc-500">
+              Product strategy, AI execution, and team coaching for organizations that need practical outcomes.
+            </p>
+            <div class="mt-5 flex gap-3 text-[11px]">
+              <a class="social-link bg-zinc-200" href="mailto:schmid.johannes90@gmail.com">@</a>
+              <a class="social-link bg-zinc-200" href="https://www.linkedin.com/in/johannes-schmid" target="_blank" rel="noreferrer">in</a>
+              <a class="social-link bg-zinc-200" href="#">be</a>
+              <a class="social-link bg-zinc-200" href="#">dr</a>
+            </div>
+          </div>
+
+          <form class="space-y-3" action="#" method="post">
+            <input class="w-full p-3 text-xs" type="text" name="name" placeholder="Name" />
+            <input class="w-full p-3 text-xs" type="email" name="email" placeholder="Email" />
+            <textarea class="h-24 w-full resize-none p-3 text-xs" name="message" placeholder="Type your message here"></textarea>
+            <button
+              class="inline-block bg-[#2f2f2f] px-9 py-2 text-[11px] font-semibold text-white hover:bg-black active:bg-[#1e1e1e]"
+              type="submit"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
