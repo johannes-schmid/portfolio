@@ -108,8 +108,8 @@
         justify-content: flex-start;
         align-items: flex-start;
         width: 100%;
-        min-height: 420px;
-        padding: 3rem;
+        min-height: 520px;
+        padding: 5rem 4rem;
         display: flex;
         position: relative;
         overflow: hidden;
@@ -159,6 +159,10 @@
       }
 
       .section { margin-top: 0.75rem; }
+
+      /* Generous section padding — matches example's 5rem vertical style */
+      .sec-pad   { padding: 5rem 4rem; }
+      .sec-pad-sm { padding: 2.5rem 3rem; }
 
       /* Pills */
       .pill, .pill-dark, .pill-outline {
@@ -255,12 +259,16 @@
       @media (max-width: 991px) {
         .t-96 { font-size: 3.5rem; }
         .t-40 { font-size: 2rem; }
-        .hero { min-height: 340px; padding: 2rem; }
+        .hero { min-height: 420px; padding: 3.5rem 2.5rem; }
+        .sec-pad { padding: 3.5rem 2.5rem; }
+        .sec-pad-sm { padding: 2rem 2.5rem; }
       }
       @media (max-width: 767px) {
         .t-96 { font-size: 2.5rem; }
         .t-40 { font-size: 1.6rem; }
-        .hero { padding: 1.5rem; }
+        .hero { padding: 2.5rem 1.5rem; }
+        .sec-pad { padding: 2.5rem 1.5rem; }
+        .sec-pad-sm { padding: 1.5rem; }
         .col-2 { grid-template-columns: 1fr !important; }
         .col-3 { grid-template-columns: 1fr !important; }
         .hero-photo { display: none; }
@@ -327,9 +335,9 @@
       </section>
 
       <!-- LOGO TRUST BAR -->
-      <section class="section card p-4">
-        <p class="t-12 gray text-center mb-3" style="letter-spacing:0.06em;text-transform:uppercase;font-weight:600;">Worked with tools and teams at</p>
-        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0.5rem;align-items:center;text-align:center;">
+      <section class="section card sec-pad-sm">
+        <p class="t-12 gray text-center mb-4" style="letter-spacing:0.08em;text-transform:uppercase;font-weight:600;">Worked with tools and teams at</p>
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;align-items:center;text-align:center;">
           <span class="t-12 font-bold" style="color:#7b7e86;">Figma</span>
           <span class="t-12 font-bold" style="color:#7b7e86;">Jira</span>
           <span class="t-12 font-bold" style="color:#7b7e86;">Linear</span>
@@ -339,8 +347,8 @@
       </section>
 
       <!-- FEATURE 1: text left, mockup right -->
-      <section class="section card p-5" id="about">
-        <div class="col-2" style="display:grid;grid-template-columns:1fr 1.2fr;gap:2rem;align-items:center;">
+      <section class="section card sec-pad" id="about">
+        <div class="col-2" style="display:grid;grid-template-columns:1fr 1.2fr;gap:4rem;align-items:center;">
           <div>
             <p class="eyebrow">Discovery</p>
             <h2 class="t-32 mt-2" style="max-width:300px;">Real-Time Research &amp; Discovery Layer</h2>
@@ -353,7 +361,7 @@
             </div>
           </div>
           <!-- Mockup: research board -->
-          <div class="frame p-5" style="min-height:220px;">
+          <div class="frame p-6" style="min-height:300px;">
             <div style="background:white;border-radius:0.4rem;padding:1rem;box-shadow:0 16px 32px rgba(234,92,71,0.14);">
               <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem;">
                 <div style="width:8px;height:8px;border-radius:50%;background:#ef775a;"></div>
@@ -390,10 +398,10 @@
       </section>
 
       <!-- FEATURE 2: mockup left, text right -->
-      <section class="section card p-5">
-        <div class="col-2" style="display:grid;grid-template-columns:1.2fr 1fr;gap:2rem;align-items:center;">
+      <section class="section card sec-pad">
+        <div class="col-2" style="display:grid;grid-template-columns:1.2fr 1fr;gap:4rem;align-items:center;">
           <!-- Mockup: roadmap / PRD editor -->
-          <div class="frame p-5" style="min-height:220px;">
+          <div class="frame p-6" style="min-height:300px;">
             <div style="background:white;border-radius:0.4rem;padding:1rem;box-shadow:0 14px 28px rgba(0,0,0,0.08);">
               <div style="display:flex;gap:0.4rem;margin-bottom:0.75rem;">
                 <span style="height:8px;width:8px;border-radius:50%;background:#ef775a;"></span>
@@ -450,12 +458,12 @@
       </section>
 
       <!-- FEATURE 3: centered header + wide content -->
-      <section class="section card p-5">
-        <div style="text-align:center;margin-bottom:2rem;">
+      <section class="section card sec-pad">
+        <div style="text-align:center;margin-bottom:3.5rem;">
           <p class="eyebrow">Execution</p>
           <h2 class="t-32 mt-2">Delivery Now — What Matters</h2>
         </div>
-        <div class="col-2" style="display:grid;grid-template-columns:1fr 1.6fr;gap:2rem;align-items:center;">
+        <div class="col-2" style="display:grid;grid-template-columns:1fr 1.6fr;gap:4rem;align-items:center;">
           <div>
             <div style="margin-bottom:1.5rem;">
               <p class="t-12 font-bold" style="color:#555;">4 Projects Shipped</p>
@@ -473,7 +481,7 @@
             </div>
           </div>
           <!-- Wide mockup -->
-          <div class="frame p-4" style="min-height:180px;">
+          <div class="frame p-5" style="min-height:240px;">
             <div style="background:white;border-radius:0.4rem;padding:1rem;box-shadow:0 12px 24px rgba(0,0,0,0.07);">
               <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
                 <div style="height:7px;width:80px;background:#ececec;border-radius:4px;"></div>
@@ -493,15 +501,15 @@
       </section>
 
       <!-- WHAT GOOD PM WORK LOOKS LIKE: 3 columns -->
-      <section class="section card p-5">
-        <div style="text-align:center;margin-bottom:2rem;">
+      <section class="section card sec-pad">
+        <div style="text-align:center;margin-bottom:3.5rem;">
           <p class="eyebrow">Capability</p>
           <h2 class="t-32 mt-2">What Strong Product Work Looks Like</h2>
         </div>
-        <div class="col-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;">
+        <div class="col-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
           <!-- Card 1 -->
-          <article class="card p-3">
-            <div class="frame" style="height:100px;padding:1rem;">
+          <article class="card p-4">
+            <div class="frame" style="height:150px;padding:1.25rem;">
               <div style="background:white;border-radius:0.3rem;padding:0.6rem;height:100%;display:flex;flex-direction:column;gap:6px;box-shadow:0 8px 16px rgba(234,92,71,0.1);">
                 <div style="height:6px;width:50%;background:#f5b39d;border-radius:3px;"></div>
                 <div style="flex:1;display:grid;grid-template-columns:1fr 1fr;gap:4px;">
@@ -516,7 +524,7 @@
           </article>
           <!-- Card 2 -->
           <article class="card p-3">
-            <div class="frame" style="height:100px;padding:1rem;background:linear-gradient(135deg,#dde5ee,#cad8e8);">
+            <div class="frame" style="height:150px;padding:1.25rem;background:linear-gradient(135deg,#dde5ee,#cad8e8);">
               <div style="background:white;border-radius:0.3rem;padding:0.6rem;height:100%;display:flex;flex-direction:column;gap:6px;box-shadow:0 8px 16px rgba(97,167,255,0.12);">
                 <div style="height:6px;width:40%;background:#c7d4f0;border-radius:3px;"></div>
                 <div style="flex:1;display:flex;flex-direction:column;gap:3px;justify-content:center;">
@@ -531,7 +539,7 @@
           </article>
           <!-- Card 3 -->
           <article class="card p-3">
-            <div class="frame" style="height:100px;padding:1rem;background:linear-gradient(135deg,#e4dcf0,#d2c0e7);">
+            <div class="frame" style="height:150px;padding:1.25rem;background:linear-gradient(135deg,#e4dcf0,#d2c0e7);">
               <div style="background:white;border-radius:0.3rem;padding:0.6rem;height:100%;display:flex;flex-direction:column;gap:6px;box-shadow:0 8px 16px rgba(229,156,218,0.12);">
                 <div style="height:6px;width:55%;background:#d2c0e7;border-radius:3px;"></div>
                 <div style="flex:1;display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px;align-items:end;">
@@ -548,12 +556,12 @@
       </section>
 
       <!-- SEE IT WORK -->
-      <section class="section card p-5">
-        <div style="text-align:center;margin-bottom:2rem;">
+      <section class="section card sec-pad">
+        <div style="text-align:center;margin-bottom:3.5rem;">
           <p class="eyebrow">Case Studies</p>
           <h2 class="t-32 mt-2">See It Work</h2>
         </div>
-        <div class="frame p-5" style="min-height:180px;" id="work">
+        <div class="frame p-6" style="min-height:220px;" id="work">
           <div style="background:white;border-radius:0.4rem;padding:1.5rem;box-shadow:0 12px 24px rgba(0,0,0,0.06);">
             <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;">
               <div>
@@ -592,45 +600,45 @@
       </section>
 
       <!-- PORTFOLIO PROJECTS: 2x2 grid -->
-      <section class="section card p-5">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;">
+      <section class="section card sec-pad">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:3rem;">
           <div>
             <p class="eyebrow">Portfolio</p>
-            <h2 class="t-24 mt-1">Product Case Studies</h2>
+            <h2 class="t-32 mt-2">Product Case Studies</h2>
           </div>
           <span class="t-12 gray">01 — 04</span>
         </div>
-        <div class="col-2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:0.75rem;">
-          <article class="card p-3">
-            <div class="frame" style="height:100px;background:linear-gradient(135deg,#dbe8df,#c9ded0);"></div>
-            <h3 class="t-14 mt-3 font-semibold">Custom Pay Rates</h3>
-            <p class="t-12 gray mt-1">Automated complex labor law logic for U.S. market — enterprise workforce tech.</p>
-            <a class="pill-dark mt-3" style="display:inline-flex;" href="Resources/Portfolio 1" target="_blank">Open Project</a>
+        <div class="col-2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;">
+          <article class="card p-4">
+            <div class="frame" style="height:160px;background:linear-gradient(135deg,#dbe8df,#c9ded0);"></div>
+            <h3 class="t-16 mt-4 font-semibold">Custom Pay Rates</h3>
+            <p class="t-14 gray mt-2">Automated complex labor law logic for U.S. market — enterprise workforce tech.</p>
+            <a class="pill-dark mt-4" style="display:inline-flex;" href="Resources/Portfolio 1" target="_blank">Open Project</a>
           </article>
-          <article class="card p-3">
-            <div class="frame" style="height:100px;background:linear-gradient(135deg,#dde5ee,#cad8e8);"></div>
-            <h3 class="t-14 mt-3 font-semibold">Crew Scheduling Vision</h3>
-            <p class="t-12 gray mt-1">2-year product vision for enterprise operations — roadmap, constraints, and sequencing.</p>
-            <a class="pill-dark mt-3" style="display:inline-flex;" href="Resources/Protfolio Project 2" target="_blank">Open Project</a>
+          <article class="card p-4">
+            <div class="frame" style="height:160px;background:linear-gradient(135deg,#dde5ee,#cad8e8);"></div>
+            <h3 class="t-16 mt-4 font-semibold">Crew Scheduling Vision</h3>
+            <p class="t-14 gray mt-2">2-year product vision for enterprise operations — roadmap, constraints, and sequencing.</p>
+            <a class="pill-dark mt-4" style="display:inline-flex;" href="Resources/Protfolio Project 2" target="_blank">Open Project</a>
           </article>
-          <article class="card p-3">
-            <div class="frame" style="height:100px;background:linear-gradient(135deg,#e4dcf0,#d2c0e7);"></div>
-            <h3 class="t-14 mt-3 font-semibold">Vendor Communication Hub</h3>
-            <p class="t-12 gray mt-1">Centralized workflow without forcing vendor tooling changes — zero-friction adoption.</p>
-            <a class="pill-dark mt-3" style="display:inline-flex;" href="Resources/Portfolio 3" target="_blank">Open Project</a>
+          <article class="card p-4">
+            <div class="frame" style="height:160px;background:linear-gradient(135deg,#e4dcf0,#d2c0e7);"></div>
+            <h3 class="t-16 mt-4 font-semibold">Vendor Communication Hub</h3>
+            <p class="t-14 gray mt-2">Centralized workflow without forcing vendor tooling changes — zero-friction adoption.</p>
+            <a class="pill-dark mt-4" style="display:inline-flex;" href="Resources/Portfolio 3" target="_blank">Open Project</a>
           </article>
-          <article class="card p-3">
-            <div class="frame" style="height:100px;background:linear-gradient(135deg,#eadbcf,#dcc3aa);"></div>
-            <h3 class="t-14 mt-3 font-semibold">Relocation AI Agents</h3>
-            <p class="t-12 gray mt-1">Multi-agent AI architecture with retrieval, evaluation, and human-in-the-loop layers.</p>
-            <a class="pill-dark mt-3" style="display:inline-flex;" href="Resources/Portfolio 4" target="_blank">Open Project</a>
+          <article class="card p-4">
+            <div class="frame" style="height:160px;background:linear-gradient(135deg,#eadbcf,#dcc3aa);"></div>
+            <h3 class="t-16 mt-4 font-semibold">Relocation AI Agents</h3>
+            <p class="t-14 gray mt-2">Multi-agent AI architecture with retrieval, evaluation, and human-in-the-loop layers.</p>
+            <a class="pill-dark mt-4" style="display:inline-flex;" href="Resources/Portfolio 4" target="_blank">Open Project</a>
           </article>
         </div>
       </section>
 
       <!-- EVERY TEAM: text left + 2x2 grid right -->
-      <section class="section card p-5">
-        <div class="col-2" style="display:grid;grid-template-columns:1fr 1.2fr;gap:2rem;align-items:start;">
+      <section class="section card sec-pad">
+        <div class="col-2" style="display:grid;grid-template-columns:1fr 1.2fr;gap:4rem;align-items:start;">
           <div>
             <p class="eyebrow">Alignment</p>
             <h2 class="t-32 mt-2" style="max-width:280px;">Every Team, Every Decision, Product-Led</h2>
@@ -638,30 +646,30 @@
               I build product systems that connect research, delivery, GTM, and operations — so no critical decision gets trapped in side channels or Slack threads.
             </p>
           </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;">
-            <article class="card p-3">
-              <div class="frame" style="height:64px;background:#f7f7f7;"></div>
-              <p class="t-12 mt-2 font-semibold">Decision Logs</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+            <article class="card p-4">
+              <div class="frame" style="height:90px;background:#f7f7f7;"></div>
+              <p class="t-14 mt-3 font-semibold">Decision Logs</p>
             </article>
-            <article class="card p-3">
-              <div class="frame" style="height:64px;background:#f7f7f7;"></div>
-              <p class="t-12 mt-2 font-semibold">Roadmaps</p>
+            <article class="card p-4">
+              <div class="frame" style="height:90px;background:#f7f7f7;"></div>
+              <p class="t-14 mt-3 font-semibold">Roadmaps</p>
             </article>
-            <article class="card p-3">
-              <div class="frame" style="height:64px;background:#f7f7f7;"></div>
-              <p class="t-12 mt-2 font-semibold">Experiments</p>
+            <article class="card p-4">
+              <div class="frame" style="height:90px;background:#f7f7f7;"></div>
+              <p class="t-14 mt-3 font-semibold">Experiments</p>
             </article>
-            <article class="card p-3">
-              <div class="frame" style="height:64px;background:#f7f7f7;"></div>
-              <p class="t-12 mt-2 font-semibold">Release Health</p>
+            <article class="card p-4">
+              <div class="frame" style="height:90px;background:#f7f7f7;"></div>
+              <p class="t-14 mt-3 font-semibold">Release Health</p>
             </article>
           </div>
         </div>
       </section>
 
       <!-- BUILT ON PM INFRASTRUCTURE: text left + dark code panel right -->
-      <section class="section card p-5" id="skills">
-        <div class="col-2" style="display:grid;grid-template-columns:1fr 1.1fr;gap:2rem;align-items:center;">
+      <section class="section card sec-pad" id="skills">
+        <div class="col-2" style="display:grid;grid-template-columns:1fr 1.1fr;gap:4rem;align-items:center;">
           <div>
             <p class="eyebrow">Technical PM</p>
             <h2 class="t-32 mt-2" style="max-width:280px;">Built on Judgment, Not Just Backlogs</h2>
@@ -688,9 +696,9 @@
       </section>
 
       <!-- ENGINEERED FOR: centered with 3 circles -->
-      <section class="section card p-6" style="text-align:center;">
+      <section class="section card sec-pad" style="text-align:center;">
         <p class="eyebrow" style="text-align:center;">Background</p>
-        <div style="display:flex;justify-content:center;gap:0.75rem;margin:1.5rem 0;">
+        <div style="display:flex;justify-content:center;gap:1rem;margin:2.5rem 0;">
           <div style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#f5b39d,#ef775a);border:2px solid white;box-shadow:0 4px 12px rgba(239,119,90,0.3);"></div>
           <div style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#c7d4f0,#61a7ff);border:2px solid white;box-shadow:0 4px 12px rgba(97,167,255,0.3);margin-top:-8px;"></div>
           <div style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#d4edda,#027a48);border:2px solid white;box-shadow:0 4px 12px rgba(2,122,72,0.2);"></div>
@@ -706,7 +714,7 @@
       </section>
 
       <!-- BOTTOM GRADIENT CTA -->
-      <section class="section gradient-cta p-6" id="contact" style="position:relative;">
+      <section class="section gradient-cta sec-pad" id="contact" style="position:relative;">
         <div class="col-2" style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;position:relative;z-index:1;">
           <div>
             <span class="pill" style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.9);">Let's Talk</span>
