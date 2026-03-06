@@ -1,0 +1,172 @@
+Custom Pay Rates
+Problem Statement, Strategic Context & Solution Proposal
+Strategic Context
+At the time of development, the strategic priority for Rentman was clear: enter and win the U.S. market.
+The United States represents the largest addressable market in the event and production industry. While strong equipment management tools existed, there was no flexible, state-aware crew planning solution capable of handling the complexity of U.S. labor structures.
+Our entry strategy was deliberate:
+Lead with a best-in-class Crew Scheduling product tailored to U.S. operational complexity.
+Onboard companies through planning workflows.
+Expand into Equipment Management and position Rentman as the all-in-one solution.
+One recurring blocker — especially in U.S. sales conversations — was Custom Pay Rates:
+Overtime rules differ per state
+Double time and minimum call rules vary
+Union vs. non-union setups coexist
+Cost (what you pay crew) and price (what you charge customers) often differ
+While similar complexity exists in Germany and Norway, the U.S. market amplified this challenge significantly.
+Solving Custom Pay Rates was therefore not just a feature enhancement —
+it was a strategic enabler for U.S. market penetration and expansion.
+
+My Role
+As Product Manager responsible for Crew Scheduling, I:
+Identified the problem through data analysis and customer discovery
+Defined the product vision aligned with U.S. expansion
+Balanced configurability with usability
+Collaborated closely with Engineering, Design, Sales, and Customer Success
+Structured rollout, migration, and licensing strategy
+My goal:
+Build a scalable rate engine that supports 90%+ of real-world rate variations — without overwhelming users with complexity.
+
+Product Context
+The Crew Scheduling module allows project managers to:
+Assign crew to projects
+Manage availability
+Track time
+Calculate labor costs and prices
+With Custom Pay Rates, we introduced a flexible automation layer that supports:
+Overtime
+Double time
+Day & half-day rates
+Minimum charges
+Separate cost and price logic
+As outlined in the official product update:
+
+
+Custom pay rates _ Rentman Upda…
+Full update:
+https://rentman.io/product-updates/custom-pay-rates
+
+Problem Identification
+1. Data Signal: Manual Cost Editing
+Before conducting interviews, we observed a strong behavioral signal in our product analytics:
+Users frequently edited the cost field manually
+These edits often occurred after changing scheduled times
+The pattern was especially prominent in U.S.-based accounts
+This indicated a clear gap:
+Time changes were not triggering automated recalculations in a way that matched customer expectations.
+In other words, automation was missing where users needed it most.
+The product technically allowed scheduling and rate assignment —
+but the recalculation logic was too rigid for real-world overtime structures.
+This was our first quantitative validation that something was broken.
+
+2. Interview Validation (U.S. Focus)
+We then conducted 10 discovery interviews across multiple countries, with a strong focus on U.S. customers.
+Findings:
+Project managers were recalculating overtime manually in spreadsheets
+They often adjusted crew hours and then manually corrected costs
+U.S. state-level variations made this process error-prone
+Some companies had internal “rate cheat sheets” to handle complexity
+The behavioral data and interviews aligned perfectly.
+
+3. Public Roadmap & Community Validation
+We had a third validation point: our public Productboard.
+In our public feedback portal, customers could:
+Submit feature requests
+Vote on roadmap items
+Describe operational pain points
+Custom Pay Rates consistently ranked among the top-voted requests.
+Users described:
+Complex regional rules
+Union-based multipliers
+Minimum call times
+Day-rate vs hourly conflicts
+This triangulation gave us confidence:
+Product data showed heavy manual editing behavior
+Interviews explained why
+Public roadmap votes confirmed scale and urgency
+
+Activities
+To ensure we solved the right problem in the right way, I led:
+Analysis of 350+ Productboard feedback notes
+10 discovery interviews
+A design sprint generating 3 solution approaches
+10 solution validation interviews
+Technical feasibility assessments
+Milestone-based development plan
+Feature flags for controlled rollout
+Migration and testing strategy
+
+The Solution
+We introduced a flexible rate engine that enables:
+1. Tier-Based Time Brackets
+Example:
+0–8 hours
+8–10 hours
+10–12 hours
+12+ hours
+2. Cost vs. Price Separation
+Cost rates → What you pay crew
+Price rates → What you charge customers
+3. Automation on Time Changes
+When schedules are modified:
+Overtime logic recalculates automatically
+Cost updates propagate without manual edits
+Reduced need for spreadsheet corrections
+This directly addressed the behavioral pattern we saw in the data.
+4. Bulk Rate Assignment
+Assign rate structures to multiple crew members instantly.
+5. Licensing Strategy
+Launched under:
+Crew Scheduling Pro
+Quoting & Invoicing add-on
+Supporting migration to our new licensing model.
+
+Outcome & Impact
+Operational Impact
+80% reduction in manual overtime recalculations
+95% reduction in reported payment and invoicing errors
+Significant time savings per project
+Market Adaptability
+Supports 90% of regional overtime variations
+Strong applicability in the U.S., Germany, and Norway
+Adoption & Business Impact
+85%+ active adoption among eligible accounts
+20% increase in Crew Scheduling satisfaction scores
+25% increase in license upgrades from legacy plans
+Strategic Impact
+Strengthened U.S. positioning
+Reduced a major sales objection
+Enabled crew-first onboarding strategy
+Increased cross-sell into Equipment Management
+
+Why This Feature Mattered
+Custom Pay Rates was not just about automating calculations.
+It:
+Removed a critical barrier to U.S. market entry
+Closed an automation gap revealed through product analytics
+Reduced operational risk for customers
+Positioned Rentman as enterprise-ready
+Created a strong upsell path into the broader platform
+By combining data-driven problem identification,
+qualitative validation, and
+strategic market alignment,
+we transformed a frequently edited cost field into a competitive advantage.
+
+References and Links: 
+https://rentman.io/product-updates/custom-pay-rates
+
+
+Manual Calculation happening before in the input fields
+
+Typical Spreadsheet to keep track of different price and cost types US
+
+Typical Spreadsheet to keep track of different price and cost types CH
+
+
+Solution: Different crew rates with preview panel 
+
+Solution: Setting up of different crew rates
+
+
+Solution: Automatic Recalculation based on newly set rates
+
+NEEDS SOME MORE PICTURES TO SUPPORT THE CLAIMS AND FLOW

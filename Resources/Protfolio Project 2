@@ -1,0 +1,197 @@
+Reinventing Crew Scheduling for Enterprise & U.S. Expansion
+Context
+At Rentman, we identified two major strategic priorities:
+Expand deeper into the U.S. market
+Move upmarket into Enterprise accounts
+While our Crew Scheduling product was strong, it was originally optimized for mid-market event companies. Enterprise and U.S. customers required:
+Higher configurability
+Stronger process control
+Clearer workflow ownership
+Improved planning speed
+Better communication and confirmation loops
+To support this shift, I led the creation and evangelization of a 2-year product vision for Crew Scheduling.
+This was not about shipping isolated features.
+It was about defining where the product needed to go strategically.
+
+1. Empathize with the Problem
+Before defining a future state, we went deep into understanding the current one.
+1.1 Dogfooding (Use Our Own Product)
+We scheduled real-life scenarios in Rentman internally:
+Multi-day projects
+Crew substitutions
+Last-minute time changes
+Freelance confirmations
+Cross-project resource conflicts
+Pain points we experienced:
+Too many manual steps to plan crew
+Limited overview for large-scale operations
+Friction in confirming availability
+Hard to distinguish draft vs definitive planning
+Insufficient customization for enterprise workflows
+We felt the friction ourselves.
+
+1.2 Catfooding (Use Competitors’ Products)
+We tested competitive tools in the U.S. and EU markets.
+Observations:
+Some tools were stronger in workflow structure
+Others had better visibility into resource utilization
+Few supported enterprise-level customization cleanly
+Most lacked strong integration between planning and communication
+This helped us understand both our strengths and blind spots.
+
+1.3 Research & Data Insights
+We gathered insights from:
+Customer interviews
+Sales feedback
+Customer Success escalations
+Productboard requests
+Usage analytics
+Enterprise deal losses
+Patterns emerged:
+U.S. customers required more structured confirmation workflows
+Enterprise clients wanted process control & status visibility
+Planning speed directly impacted operational profitability
+Communication loops caused bottlenecks
+
+1.4 Jobs to Be Done Analysis
+Using the Jobs to Be Done framework, we reframed the problem.
+Core Jobs Identified
+Functional Jobs
+“When planning a project, I want to assign the right crew member quickly, so that my project stays on schedule.”
+“When managing multiple projects, I want a clear overview, so I can avoid staffing conflicts.”
+“When sending confirmations, I want clarity, so I don’t chase people manually.”
+Emotional Jobs
+“I want to feel in control of complex planning.”
+“I want confidence that I didn’t miss something.”
+“I want to look professional towards clients and crew.”
+Enterprise-Specific Jobs
+“I need visibility into planning status across departments.”
+“I need standardized workflows across teams.”
+This analysis shaped our direction.
+
+2. Create the Vision Type
+Instead of jumping to features, we created a multi-layered product vision artifact.
+2.1 Customer Journey Story (“Uber Type” Narrative)
+We created a future-state story:
+“Imagine planning crew as effortlessly as requesting an Uber.”
+Select function
+Instantly see best-fit crew
+Click-to-plan
+Auto-validate availability
+Send confirmation
+Track status live
+Planning becomes proactive instead of reactive.
+
+2.2 Mockups & Interface Evolution
+We visualized:
+Click-to-plan workflows
+Improved color-coded scheduling states
+Collapsible project views
+360° overview dashboards
+Availability hover previews
+Confirmation request flows
+Team-based crew lists
+Many of these were later reflected in the improvements shared publicly:
+Reference blog:
+“Get ready for an even better Crew Scheduling product”
+Key improvements included:
+Click-to-plan (3x faster scheduling)
+Improved planning overview with visual status differentiation
+Filters for fully scheduled functions
+Collapsible project views
+Crew list grouping
+Confirmation requests
+Better screen space optimization
+
+2.3 Future Press Release Exercise
+We drafted a future press-style narrative:
+“Rentman launches the most powerful crew planning experience for enterprise event teams.”
+Positioning focused on:
+Speed
+Control
+Enterprise-grade visibility
+Workflow ownership
+Reduced operational chaos
+This helped align messaging early.
+
+2.4 Whitepaper Vision
+We documented:
+Market shift toward complex, distributed event operations
+U.S. expansion requirements
+Enterprise standardization needs
+Planning as a strategic differentiator
+The product was no longer just a scheduling tool —
+it became an operations backbone.
+
+3. Validation
+Before full rollout, we conducted:
+Short validation sessions with selected enterprise customers
+U.S.-focused feedback calls
+Early mockup walkthroughs
+Feedback loops with Customer Success
+Validation insights:
+Click-to-plan significantly reduced planning friction
+Clear draft vs definitive distinction increased confidence
+Overview customization was highly valued
+Confirmation workflows reduced operational follow-up
+This gave us confidence that the vision aligned with real-world needs.
+
+4. Evangelize
+A product vision only works if adopted internally.
+4.1 Team
+Presented vision walkthrough sessions
+Shared future press release narrative
+Created mockup demos
+Linked roadmap items to strategic objectives
+4.2 Stakeholders
+Connected improvements to U.S. expansion goals
+Demonstrated enterprise readiness
+Framed it as competitive differentiation
+4.3 Cross-Functional Teams
+Enabled Sales with vision narrative
+Equipped Marketing with forward-looking messaging
+Supported Customer Success with clear positioning
+4.4 Leadership
+Aligned vision with:
+U.S. revenue growth
+Enterprise deal size increase
+Long-term product differentiation
+
+Outcomes
+Within the following roadmap cycle:
+Click-to-plan reduced scheduling time significantly
+Improved overview increased planning accuracy
+Enterprise conversations became stronger
+Product narrative matured from feature-led to vision-led
+The Crew Scheduling product evolved from:
+“A functional planning tool”
+to
+“A scalable enterprise crew operations platform.”
+
+Strategic Impact
+This vision supported:
+U.S. expansion strategy
+Enterprise market entry
+Stronger differentiation against point solutions
+Long-term platform positioning
+It ensured that every incremental improvement tied back to a coherent 1–2 year direction.
+
+Reflection
+This project demonstrated my ability to:
+Move from insight gathering to long-term product vision
+Use Jobs to Be Done to structure thinking
+Align product strategy with company strategy
+Validate vision before full investment
+Evangelize across the organization
+It was not just about improving scheduling.
+It was about defining where Crew Planning needed to go to support Rentman’s next growth phase.
+
+
+References: 
+
+https://rentman.io/product-updates/crew-scheduling-product-improvements
+
+
+Image showing woman working with multiple screen for crew planner
+
+

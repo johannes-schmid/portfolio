@@ -3,399 +3,705 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Johannes Schmid | Portfolio</title>
+    <title>Johannes Schmid | Product Manager Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.cdnfonts.com/css/aeonik" rel="stylesheet" />
     <style>
       :root {
-        --canvas: #ededed;
-        --text: #303030;
-        --muted: #6b6b6b;
-        --line: #d8d8d8;
-        --green: #0b9d8a;
-        --yellow: #f0ce6b;
-        --orange: #ef662d;
-        --lavender: #9ea2ff;
+        --_colors---dark: #1c1c1e;
+        --_colors---7d7d7d: #7d7d7d;
+        --_colors---white: #ffffff;
+        --_colors---transparent: transparent;
+        --line: #e6e6e8;
+        --coral-1: #f5b39d;
+        --coral-2: #ef775a;
+        --coral-3: #ea5c47;
+        --navy: #121621;
+        --navy-2: #1c2230;
+        --blue: #61a7ff;
+        --pink: #e59cda;
       }
 
       * {
         box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -o-font-smoothing: antialiased;
+        -webkit-appearance: none;
       }
+
+      body * { color: inherit; }
 
       body {
+        color: var(--_colors---dark);
+        background-color: #f0f0f0;
+        min-height: 100%;
         margin: 0;
-        font-family: 'DM Sans', sans-serif;
-        color: var(--text);
-        background: var(--canvas);
+        font-family: Aeonik, Arial, sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        text-rendering: optimizeLegibility;
       }
 
-      h1,
-      h2,
-      h3,
-      h4,
-      .display {
-        font-family: 'Space Grotesk', sans-serif;
-        letter-spacing: -0.03em;
+      h1, h2, h3, h4, h5, h6 {
+        letter-spacing: -0.01em;
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-weight: 700;
       }
 
-      .shell {
-        width: min(1080px, 92vw);
-        margin: 0 auto;
+      h1 {
+        font-size: 4rem;
+        font-weight: 400;
+        line-height: 1.2;
       }
 
-      .circle-art {
-        position: relative;
-        width: 250px;
-        height: 160px;
+      .t-96 {
+        font-size: 6rem;
+        line-height: 1;
+        letter-spacing: -0.02em;
+        font-weight: 700;
       }
 
-      .shape {
-        position: absolute;
-        border-radius: 999px;
-      }
+      .t-40 { font-size: 2.5rem; line-height: 1.12; letter-spacing: -0.015em; }
+      .t-32 { font-size: 2rem; line-height: 1.18; letter-spacing: -0.012em; }
+      .t-24 { font-size: 1.5rem; line-height: 1.28; }
+      .t-20 { font-size: 1.25rem; line-height: 1.5; }
+      .t-16 { font-size: 1rem; line-height: 1.5; }
+      .t-14 { font-size: 0.875rem; line-height: 1.5; }
+      .t-12 { font-size: 0.75rem; line-height: 1.45; }
 
-      .shape-left {
-        width: 92px;
-        height: 92px;
-        background: var(--green);
-        border: 16px solid #4f4cae;
-        top: 0;
-        left: 0;
-      }
+      .gray { color: var(--_colors---7d7d7d); }
+      .mono { font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace; }
 
-      .shape-right {
-        width: 135px;
-        height: 135px;
-        background: var(--yellow);
-        right: 0;
-        top: 20px;
-        display: grid;
-        place-items: center;
-        overflow: hidden;
-      }
-
-      .burst {
-        width: 95px;
-        height: 95px;
-        background: repeating-conic-gradient(from 0deg, #f58bb6 0deg 8deg, transparent 8deg 16deg);
-        border-radius: 999px;
-      }
-
-      .shape-star {
-        width: 52px;
-        height: 52px;
-        background: #f4bf5f;
-        bottom: 0;
-        left: 12px;
-        display: grid;
-        place-items: center;
-      }
-
-      .shape-star::before {
-        content: '';
-        width: 22px;
-        height: 22px;
-        background: #fef3db;
-        clip-path: polygon(50% 0%, 61% 38%, 100% 50%, 61% 62%, 50% 100%, 39% 62%, 0% 50%, 39% 38%);
-      }
-
-      .logo-row,
-      .service-grid,
-      .work-grid,
-      .clients-grid {
-        border-top: 1px solid var(--line);
-      }
-
-      .work-card,
-      .testimonial {
-        text-decoration: none;
-        color: inherit;
-      }
-
-      .work-tile {
+      /* Layout */
+      .page {
         width: 100%;
-        aspect-ratio: 1 / 1;
+        max-width: 1200px;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* Navbar */
+      .navbar {
+        z-index: 100;
+        background-color: #f0f0f0;
+        align-items: center;
+        width: 100%;
+        padding: 1.25rem 1.5rem;
+        display: flex;
+        position: sticky;
+        top: 0;
+      }
+
+      /* Hero */
+      .hero {
+        color: white;
+        background:
+          radial-gradient(circle at 12% 0%, rgba(255,255,255,0.20), transparent 36%),
+          linear-gradient(135deg, var(--coral-1) 0%, var(--coral-2) 48%, var(--coral-3) 100%);
+        border-radius: 0.5rem;
+        flex-flow: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 100%;
+        min-height: 420px;
+        padding: 3rem;
+        display: flex;
         position: relative;
         overflow: hidden;
+        margin-top: 0.75rem;
       }
 
-      .img-overlay,
-      .img-multiply {
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
+      /* Surface cards */
+      .card {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 0.5rem;
       }
 
-      .img-overlay {
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.24), transparent 50%);
-      }
+      .section { margin-top: 0.75rem; }
 
-      .img-multiply {
-        mix-blend-mode: multiply;
-        opacity: 0.25;
-      }
-
-      a,
-      button {
-        transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1), opacity 260ms cubic-bezier(0.22, 1, 0.36, 1),
-          box-shadow 260ms cubic-bezier(0.22, 1, 0.36, 1), background-color 260ms cubic-bezier(0.22, 1, 0.36, 1);
-      }
-
-      a:hover,
-      button:hover {
-        transform: translateY(-2px);
-      }
-
-      a:active,
-      button:active {
-        transform: translateY(0);
-      }
-
-      a:focus-visible,
-      button:focus-visible,
-      input:focus-visible,
-      textarea:focus-visible {
-        outline: 2px solid #1f1f1f;
-        outline-offset: 2px;
-      }
-
-      input,
-      textarea {
-        background: #f4f4f4;
-        border: 1px solid #e8e8e8;
-      }
-
-      .service-icon {
-        width: 54px;
-        height: 54px;
+      /* Pills */
+      .pill, .pill-dark, .pill-outline {
         border-radius: 999px;
-        margin: 0 auto 16px;
-        background: linear-gradient(180deg, #dbdbdb, #cacaca);
-      }
-
-      .social-link {
-        width: 24px;
-        height: 24px;
-        border-radius: 999px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        line-height: 1;
+        padding: 0.58rem 0.9rem;
+        text-decoration: none;
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        cursor: pointer;
+      }
+      .pill {
+        color: var(--_colors---dark);
+        background: rgba(255,255,255,0.85);
+        border: 1px solid rgba(255,255,255,0.45);
+      }
+      .pill-dark {
+        color: #fff;
+        background: #111215;
+        border: 1px solid #111215;
+      }
+      .pill-outline {
+        color: var(--_colors---dark);
+        background: #fff;
+        border: 1px solid var(--line);
       }
 
-      .noise {
-        position: fixed;
-        inset: 0;
-        pointer-events: none;
-        opacity: 0.05;
-        z-index: 0;
+      /* Eyebrow */
+      .eyebrow {
+        font-size: 0.56rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--_colors---7d7d7d);
       }
 
-      main,
-      header,
-      footer {
+      /* Frame mockups */
+      .frame {
         position: relative;
-        z-index: 1;
+        overflow: hidden;
+        border-radius: 0.4rem;
+        background: linear-gradient(135deg, #f3d8d0, #f7f7f7);
+      }
+      .frame::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0,0,0,0.06), transparent 50%);
+        pointer-events: none;
+      }
+
+      /* Dark band */
+      .dark-band {
+        color: #f2f5ff;
+        background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
+        border: 1px solid #262d3d;
+        border-radius: 0.5rem;
+      }
+
+      /* Gradient CTA */
+      .gradient-cta {
+        background: linear-gradient(135deg, #1a1f2e 0%, #1e2a4a 50%, #1a2035 100%);
+        border-radius: 0.5rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .gradient-cta::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(97,167,255,0.25) 0%, rgba(229,156,218,0.25) 100%);
+        pointer-events: none;
+      }
+
+      /* Footer */
+      .footer {
+        color: #ccd2df;
+        background: #0f1219;
+        margin-top: 0.75rem;
+      }
+
+      a, button {
+        transition: opacity 0.2s, transform 0.2s;
+        text-decoration: none;
+      }
+      a:hover, button:hover { opacity: 0.8; transform: translateY(-1px); }
+
+      /* Divider */
+      .divider { border: none; border-top: 1px solid var(--line); margin: 0; }
+
+      @media (max-width: 991px) {
+        .t-96 { font-size: 3.5rem; }
+        .t-40 { font-size: 2rem; }
+        .hero { min-height: 340px; padding: 2rem; }
+      }
+      @media (max-width: 767px) {
+        .t-96 { font-size: 2.5rem; }
+        .t-40 { font-size: 1.6rem; }
+        .hero { padding: 1.5rem; }
+        .col-2 { grid-template-columns: 1fr !important; }
+        .col-3 { grid-template-columns: 1fr !important; }
       }
     </style>
   </head>
   <body>
-    <svg class="noise" xmlns="http://www.w3.org/2000/svg">
-      <filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch" /></filter>
-      <rect width="100%" height="100%" filter="url(#n)" opacity="0.4" />
-    </svg>
 
-    <header class="shell py-8 md:py-10">
-      <nav class="flex items-center justify-between text-[11px] font-medium">
-        <a href="#" class="display">Logo</a>
-        <ul class="flex items-center gap-4 md:gap-8">
-          <li><a href="#about">About</a></li>
-          <li><a href="#work">Work</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <main class="shell pb-20">
-      <section id="about" class="grid gap-8 pb-12 pt-5 md:grid-cols-[1fr_280px] md:items-center md:gap-12">
-        <div>
-          <p class="text-xs font-medium text-zinc-500">Product management</p>
-          <h1 class="display mt-3 max-w-[420px] text-4xl leading-[1.02] md:text-[60px]">Johannes Schmid portfolio</h1>
-          <p class="mt-4 max-w-[420px] text-sm leading-[1.7] text-zinc-500">
-            Product manager focused on user-centric product development, AI delivery, and measurable business outcomes.
-          </p>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="page flex items-center justify-between gap-4">
+        <a href="#top" class="t-12 font-bold tracking-tight">Johannes Schmid</a>
+        <div class="t-12 gray flex items-center gap-4">
+          <a href="#about">About</a>
+          <a href="#work">Work</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
         </div>
-        <div class="circle-art justify-self-start md:justify-self-end" aria-hidden="true">
-          <div class="shape shape-left"></div>
-          <div class="shape shape-right"><div class="burst"></div></div>
-          <div class="shape shape-star"></div>
+        <a class="pill-dark" href="Resources/CV_Johannes_schmid_2025.pdf" download>Download CV</a>
+      </div>
+    </nav>
+
+    <main id="top" class="page pb-6">
+
+      <!-- HERO -->
+      <section class="hero">
+        <span class="pill">Product Manager Portfolio</span>
+        <h1 class="t-96 mt-4" style="max-width:280px;color:white;">
+          The Product Execution Layer
+        </h1>
+        <p class="t-14 mt-3" style="max-width:380px;color:rgba(255,255,255,0.82);">
+          End-to-end product management — from discovery and AI system design to roadmap delivery and cross-functional alignment.
+        </p>
+        <div class="mt-4 flex gap-2">
+          <a class="pill-dark" href="#work">View Projects</a>
+          <a class="pill" href="Resources/Profile (1).pdf" target="_blank">Read Profile</a>
         </div>
-      </section>
-
-      <section class="logo-row grid grid-cols-3 gap-y-6 py-8 text-center text-base font-semibold md:grid-cols-6">
-        <span>Bē</span>
-        <span>Google</span>
-        <span>Apple</span>
-        <span>dribbble</span>
-        <span>awwwards</span>
-        <span>LinkedIn</span>
-      </section>
-
-      <section class="service-grid mt-3 grid gap-10 py-12 md:grid-cols-3 md:gap-7">
-        <article class="text-center">
-          <div class="service-icon"></div>
-          <h3 class="display text-lg">Product strategy</h3>
-          <p class="mt-2 text-xs leading-[1.7] text-zinc-500">
-            End-to-end roadmap definition with clear value hypotheses and delivery milestones.
-          </p>
-          <a class="mt-3 inline-block text-xs font-semibold" href="#">Learn more at LinkedIn</a>
-        </article>
-        <article class="text-center">
-          <div class="service-icon"></div>
-          <h3 class="display text-lg">AI execution</h3>
-          <p class="mt-2 text-xs leading-[1.7] text-zinc-500">
-            Retrieval-augmented workflows, model ops, and evaluation frameworks for product teams.
-          </p>
-          <a class="mt-3 inline-block text-xs font-semibold" href="#">Learn more at LinkedIn</a>
-        </article>
-        <article class="text-center">
-          <div class="service-icon"></div>
-          <h3 class="display text-lg">Leadership</h3>
-          <p class="mt-2 text-xs leading-[1.7] text-zinc-500">
-            Cross-functional alignment across engineering, design, and go-to-market stakeholders.
-          </p>
-          <a class="mt-3 inline-block text-xs font-semibold" href="#">Learn more at LinkedIn</a>
-        </article>
-      </section>
-
-      <section id="work" class="pt-3">
-        <h2 class="display mb-6 text-center text-2xl">My latest work</h2>
-        <div class="work-grid grid gap-x-7 gap-y-10 py-9 md:grid-cols-3">
-          <a class="work-card" href="#">
-            <div class="work-tile" style="background:#ef5f2b">
-              <img src="https://placehold.co/460x460" alt="RAG optimization product" class="h-full w-full object-cover opacity-70" />
-              <div class="img-overlay"></div>
-              <div class="img-multiply" style="background:#cf3f00"></div>
-            </div>
-            <h3 class="mt-3 display text-sm">RAG Optimization</h3>
-            <p class="text-xs text-zinc-500">Product Leadership</p>
-          </a>
-          <a class="work-card" href="#">
-            <div class="work-tile" style="background:#e4bfcf">
-              <img src="https://placehold.co/460x460" alt="Migration platform architecture" class="h-full w-full object-cover opacity-70" />
-              <div class="img-overlay"></div>
-              <div class="img-multiply" style="background:#b98fd7"></div>
-            </div>
-            <h3 class="mt-3 display text-sm">Relocation AI Platform</h3>
-            <p class="text-xs text-zinc-500">Sofly</p>
-          </a>
-          <a class="work-card" href="#">
-            <div class="work-tile" style="background:#059a86">
-              <img src="https://placehold.co/460x460" alt="B2B SaaS portfolio strategy" class="h-full w-full object-cover opacity-70" />
-              <div class="img-overlay"></div>
-              <div class="img-multiply" style="background:#00675e"></div>
-            </div>
-            <h3 class="mt-3 display text-sm">Growth Playbooks</h3>
-            <p class="text-xs text-zinc-500">Rentman</p>
-          </a>
-          <a class="work-card" href="#">
-            <div class="work-tile" style="background:#8ea4ff">
-              <img src="https://placehold.co/460x460" alt="Agile transformation initiative" class="h-full w-full object-cover opacity-70" />
-              <div class="img-overlay"></div>
-              <div class="img-multiply" style="background:#5e6df2"></div>
-            </div>
-            <h3 class="mt-3 display text-sm">Agile PM Framework</h3>
-            <p class="text-xs text-zinc-500">Team Enablement</p>
-          </a>
-          <a class="work-card" href="#">
-            <div class="work-tile" style="background:#f0ce6b">
-              <img src="https://placehold.co/460x460" alt="Product analytics model" class="h-full w-full object-cover opacity-70" />
-              <div class="img-overlay"></div>
-              <div class="img-multiply" style="background:#ccab48"></div>
-            </div>
-            <h3 class="mt-3 display text-sm">Experiment Library</h3>
-            <p class="text-xs text-zinc-500">User Research</p>
-          </a>
-          <a class="work-card" href="#">
-            <div class="work-tile" style="background:#afd3c5">
-              <img src="https://placehold.co/460x460" alt="Stakeholder reporting" class="h-full w-full object-cover opacity-70" />
-              <div class="img-overlay"></div>
-              <div class="img-multiply" style="background:#7ab0a0"></div>
-            </div>
-            <h3 class="mt-3 display text-sm">Executive Reporting</h3>
-            <p class="text-xs text-zinc-500">Governance</p>
-          </a>
+        <!-- Profile card bottom right -->
+        <div style="position:absolute;bottom:1.5rem;right:1.5rem;width:96px;height:68px;border-radius:0.4rem;overflow:hidden;border:1px solid rgba(255,255,255,0.3);background:rgba(0,0,0,0.18);box-shadow:0 12px 24px rgba(0,0,0,0.22);">
+          <img src="Resources/Profile_Photo.png" alt="Johannes Schmid" style="width:100%;height:100%;object-fit:cover;" />
+        </div>
+        <!-- Tags row -->
+        <div class="t-12 mt-10 flex gap-2" style="color:rgba(255,255,255,0.68);">
+          <span>AI Products</span><span>•</span>
+          <span>Enterprise PM</span><span>•</span>
+          <span>Product Ops</span><span>•</span>
+          <span>Discovery</span>
         </div>
       </section>
 
-      <section class="pt-5">
-        <h2 class="display mb-6 text-center text-2xl">Clients</h2>
-        <div class="clients-grid grid gap-5 py-8 md:grid-cols-3">
-          <a href="#" class="testimonial border border-[#e1d7c4] bg-[#f3ecdd] p-5">
-            <p class="text-xs leading-[1.7]">"Johannes turned fragmented requirements into a clear AI roadmap with visible impact in one quarter."</p>
-            <div class="mt-8 flex items-center gap-3">
-              <div class="h-8 w-8 rounded-full bg-zinc-500"></div>
-              <div>
-                <p class="text-[11px] font-semibold">Client Review</p>
-                <p class="text-[11px] text-zinc-500">Google</p>
-              </div>
-            </div>
-          </a>
-          <a href="#" class="testimonial border border-[#e1d7c4] bg-[#f3ecdd] p-5">
-            <p class="text-xs leading-[1.7]">"Strong mix of product thinking and operational discipline. Teams shipped faster with better quality."</p>
-            <div class="mt-8 flex items-center gap-3">
-              <div class="h-8 w-8 rounded-full bg-zinc-500"></div>
-              <div>
-                <p class="text-[11px] font-semibold">Client Review</p>
-                <p class="text-[11px] text-zinc-500">Scale-up Team</p>
-              </div>
-            </div>
-          </a>
-          <a href="#" class="testimonial border border-[#e1d7c4] bg-[#f3ecdd] p-5">
-            <p class="text-xs leading-[1.7]">"Excellent stakeholder communication and measurable improvement in adoption across markets."</p>
-            <div class="mt-8 flex items-center gap-3">
-              <div class="h-8 w-8 rounded-full bg-zinc-500"></div>
-              <div>
-                <p class="text-[11px] font-semibold">Client Review</p>
-                <p class="text-[11px] text-zinc-500">Enterprise SaaS</p>
-              </div>
-            </div>
-          </a>
+      <!-- LOGO TRUST BAR -->
+      <section class="section card p-4">
+        <p class="t-12 gray text-center mb-3" style="letter-spacing:0.06em;text-transform:uppercase;font-weight:600;">Worked with tools and teams at</p>
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0.5rem;align-items:center;text-align:center;">
+          <span class="t-12 font-bold" style="color:#7b7e86;">Figma</span>
+          <span class="t-12 font-bold" style="color:#7b7e86;">Jira</span>
+          <span class="t-12 font-bold" style="color:#7b7e86;">Linear</span>
+          <span class="t-12 font-bold" style="color:#7b7e86;">Notion</span>
+          <span class="t-12 font-bold" style="color:#7b7e86;">Miro</span>
         </div>
       </section>
 
-      <section id="contact" class="mt-5 border-t border-[var(--line)] py-12">
-        <div class="grid gap-8 md:grid-cols-[1fr_1.3fr] md:gap-10">
+      <!-- FEATURE 1: text left, mockup right -->
+      <section class="section card p-5" id="about">
+        <div class="col-2" style="display:grid;grid-template-columns:1fr 1.2fr;gap:2rem;align-items:center;">
           <div>
-            <h2 class="display text-3xl">Let's work together</h2>
-            <p class="mt-4 max-w-[380px] text-xs leading-[1.7] text-zinc-500">
-              Product strategy, AI execution, and team coaching for organizations that need practical outcomes.
+            <p class="eyebrow">Discovery</p>
+            <h2 class="t-32 mt-2" style="max-width:300px;">Real-Time Research &amp; Discovery Layer</h2>
+            <p class="t-14 mt-3" style="color:#555;max-width:340px;">
+              Customer interviews, workflow mapping, and behavioral analytics to surface real friction before a single feature gets defined. No guesses — only evidence.
             </p>
-            <div class="mt-5 flex gap-3 text-[11px]">
-              <a class="social-link bg-zinc-200" href="mailto:schmid.johannes90@gmail.com">@</a>
-              <a class="social-link bg-zinc-200" href="https://www.linkedin.com/in/johannes-schmid" target="_blank" rel="noreferrer">in</a>
-              <a class="social-link bg-zinc-200" href="#">be</a>
-              <a class="social-link bg-zinc-200" href="#">dr</a>
+            <div class="mt-4 flex gap-2">
+              <a class="pill-dark" href="Resources/Profile (1).pdf" target="_blank">Read Profile</a>
+              <a class="pill-outline" href="#work">See Work</a>
             </div>
           </div>
-
-          <form class="space-y-3" action="#" method="post">
-            <input class="w-full p-3 text-xs" type="text" name="name" placeholder="Name" />
-            <input class="w-full p-3 text-xs" type="email" name="email" placeholder="Email" />
-            <textarea class="h-24 w-full resize-none p-3 text-xs" name="message" placeholder="Type your message here"></textarea>
-            <button
-              class="inline-block bg-[#2f2f2f] px-9 py-2 text-[11px] font-semibold text-white hover:bg-black active:bg-[#1e1e1e]"
-              type="submit"
-            >
-              Submit
-            </button>
-          </form>
+          <!-- Mockup: research board -->
+          <div class="frame p-5" style="min-height:220px;">
+            <div style="background:white;border-radius:0.4rem;padding:1rem;box-shadow:0 16px 32px rgba(234,92,71,0.14);">
+              <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem;">
+                <div style="width:8px;height:8px;border-radius:50%;background:#ef775a;"></div>
+                <div style="width:6px;height:6px;border-radius:50%;background:#f5b39d;"></div>
+                <div style="height:6px;width:60px;background:#ececec;border-radius:4px;"></div>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;">
+                <div style="background:#fef3f2;border-radius:0.3rem;padding:0.5rem;">
+                  <div style="height:6px;background:#f5c6c2;border-radius:3px;margin-bottom:4px;"></div>
+                  <div style="height:6px;width:70%;background:#fce8e7;border-radius:3px;"></div>
+                </div>
+                <div style="background:#ecfdf3;border-radius:0.3rem;padding:0.5rem;">
+                  <div style="height:6px;background:#c3e6cb;border-radius:3px;margin-bottom:4px;"></div>
+                  <div style="height:6px;width:80%;background:#d4edda;border-radius:3px;"></div>
+                </div>
+                <div style="background:#f0f4ff;border-radius:0.3rem;padding:0.5rem;">
+                  <div style="height:6px;background:#c7d4f0;border-radius:3px;margin-bottom:4px;"></div>
+                  <div style="height:6px;width:55%;background:#dce6fa;border-radius:3px;"></div>
+                </div>
+                <div style="background:#fff9ec;border-radius:0.3rem;padding:0.5rem;">
+                  <div style="height:6px;background:#f5e0a0;border-radius:3px;margin-bottom:4px;"></div>
+                  <div style="height:6px;width:65%;background:#faefc6;border-radius:3px;"></div>
+                </div>
+              </div>
+              <div style="margin-top:0.75rem;display:flex;gap:0.4rem;align-items:center;">
+                <div style="height:22px;width:22px;border-radius:50%;background:#f3d8d0;"></div>
+                <div style="height:22px;width:22px;border-radius:50%;background:#dce6fa;"></div>
+                <div style="height:22px;width:22px;border-radius:50%;background:#d4edda;"></div>
+                <div style="flex:1;height:6px;background:#f0f0f0;border-radius:3px;"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
+
+      <!-- FEATURE 2: mockup left, text right -->
+      <section class="section card p-5">
+        <div class="col-2" style="display:grid;grid-template-columns:1.2fr 1fr;gap:2rem;align-items:center;">
+          <!-- Mockup: roadmap / PRD editor -->
+          <div class="frame p-5" style="min-height:220px;">
+            <div style="background:white;border-radius:0.4rem;padding:1rem;box-shadow:0 14px 28px rgba(0,0,0,0.08);">
+              <div style="display:flex;gap:0.4rem;margin-bottom:0.75rem;">
+                <span style="height:8px;width:8px;border-radius:50%;background:#ef775a;"></span>
+                <span style="height:8px;width:8px;border-radius:50%;background:#f5b39d;"></span>
+                <span style="height:8px;width:8px;border-radius:50%;background:#ddd;"></span>
+              </div>
+              <!-- Fake kanban columns -->
+              <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.4rem;">
+                <div>
+                  <div style="height:5px;background:#e8e8e8;border-radius:2px;margin-bottom:6px;"></div>
+                  <div style="background:#fef3f2;border-radius:0.25rem;padding:0.4rem;margin-bottom:4px;">
+                    <div style="height:5px;background:#f5c6c2;border-radius:2px;margin-bottom:3px;"></div>
+                    <div style="height:5px;width:70%;background:#fce8e7;border-radius:2px;"></div>
+                  </div>
+                  <div style="background:#f7f7f7;border-radius:0.25rem;padding:0.4rem;">
+                    <div style="height:5px;background:#e8e8e8;border-radius:2px;margin-bottom:3px;"></div>
+                    <div style="height:5px;width:55%;background:#eeeeee;border-radius:2px;"></div>
+                  </div>
+                </div>
+                <div>
+                  <div style="height:5px;background:#e8e8e8;border-radius:2px;margin-bottom:6px;"></div>
+                  <div style="background:#f0f4ff;border-radius:0.25rem;padding:0.4rem;margin-bottom:4px;">
+                    <div style="height:5px;background:#c7d4f0;border-radius:2px;margin-bottom:3px;"></div>
+                    <div style="height:5px;width:80%;background:#dce6fa;border-radius:2px;"></div>
+                  </div>
+                  <div style="background:#f0f4ff;border-radius:0.25rem;padding:0.4rem;">
+                    <div style="height:5px;background:#c7d4f0;border-radius:2px;margin-bottom:3px;"></div>
+                    <div style="height:5px;width:60%;background:#dce6fa;border-radius:2px;"></div>
+                  </div>
+                </div>
+                <div>
+                  <div style="height:5px;background:#e8e8e8;border-radius:2px;margin-bottom:6px;"></div>
+                  <div style="background:#ecfdf3;border-radius:0.25rem;padding:0.4rem;margin-bottom:4px;">
+                    <div style="height:5px;background:#c3e6cb;border-radius:2px;margin-bottom:3px;"></div>
+                    <div style="height:5px;width:75%;background:#d4edda;border-radius:2px;"></div>
+                  </div>
+                  <div style="background:#f7f7f7;border-radius:0.25rem;padding:0.4rem;">
+                    <div style="height:5px;background:#e8e8e8;border-radius:2px;margin-bottom:3px;"></div>
+                    <div style="height:5px;width:50%;background:#eeeeee;border-radius:2px;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="eyebrow">Roadmap</p>
+            <h2 class="t-32 mt-2" style="max-width:280px;">It's a User Need. It's a Product Feature.</h2>
+            <p class="t-14 mt-3" style="color:#555;max-width:320px;">
+              I translate customer signals into clear roadmap priorities — sequenced, scoped, and backed by data rather than stakeholder pressure.
+            </p>
+            <a class="pill-dark mt-4" style="display:inline-flex;" href="#work">See Roadmap Work</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURE 3: centered header + wide content -->
+      <section class="section card p-5">
+        <div style="text-align:center;margin-bottom:2rem;">
+          <p class="eyebrow">Execution</p>
+          <h2 class="t-32 mt-2">Delivery Now — What Matters</h2>
+        </div>
+        <div class="col-2" style="display:grid;grid-template-columns:1fr 1.6fr;gap:2rem;align-items:center;">
+          <div>
+            <div style="margin-bottom:1.5rem;">
+              <p class="t-12 font-bold" style="color:#555;">4 Projects Shipped</p>
+              <p class="t-12" style="color:var(--_colors---7d7d7d);">Across workforce tech, enterprise ops, and AI</p>
+            </div>
+            <hr class="divider" style="margin:1rem 0;" />
+            <div style="margin-bottom:1.5rem;">
+              <p class="t-12 font-bold" style="color:#555;">Cross-functional Delivery</p>
+              <p class="t-12" style="color:var(--_colors---7d7d7d);">Engineering, design, legal, and operations aligned</p>
+            </div>
+            <hr class="divider" style="margin:1rem 0;" />
+            <div>
+              <p class="t-12 font-bold" style="color:#555;">AI-Integrated Products</p>
+              <p class="t-12" style="color:var(--_colors---7d7d7d);">Multi-agent pipelines with human-in-the-loop review</p>
+            </div>
+          </div>
+          <!-- Wide mockup -->
+          <div class="frame p-4" style="min-height:180px;">
+            <div style="background:white;border-radius:0.4rem;padding:1rem;box-shadow:0 12px 24px rgba(0,0,0,0.07);">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+                <div style="height:7px;width:80px;background:#ececec;border-radius:4px;"></div>
+                <div style="display:flex;gap:0.3rem;">
+                  <div style="height:18px;width:40px;border-radius:4px;background:#111;"></div>
+                  <div style="height:18px;width:40px;border-radius:4px;background:#f0f0f0;border:1px solid #e0e0e0;"></div>
+                </div>
+              </div>
+              <div style="height:8px;background:#f5f5f5;border-radius:3px;margin-bottom:6px;"></div>
+              <div style="height:8px;width:85%;background:#f5f5f5;border-radius:3px;margin-bottom:6px;"></div>
+              <div style="height:8px;width:70%;background:#ecfdf3;border-radius:3px;margin-bottom:6px;"></div>
+              <div style="height:8px;background:#f5f5f5;border-radius:3px;margin-bottom:6px;"></div>
+              <div style="height:8px;width:60%;background:#f5f5f5;border-radius:3px;"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHAT GOOD PM WORK LOOKS LIKE: 3 columns -->
+      <section class="section card p-5">
+        <div style="text-align:center;margin-bottom:2rem;">
+          <p class="eyebrow">Capability</p>
+          <h2 class="t-32 mt-2">What Strong Product Work Looks Like</h2>
+        </div>
+        <div class="col-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;">
+          <!-- Card 1 -->
+          <article class="card p-3">
+            <div class="frame" style="height:100px;padding:1rem;">
+              <div style="background:white;border-radius:0.3rem;padding:0.6rem;height:100%;display:flex;flex-direction:column;gap:6px;box-shadow:0 8px 16px rgba(234,92,71,0.1);">
+                <div style="height:6px;width:50%;background:#f5b39d;border-radius:3px;"></div>
+                <div style="flex:1;display:grid;grid-template-columns:1fr 1fr;gap:4px;">
+                  <div style="background:#fef3f2;border-radius:0.2rem;"></div>
+                  <div style="background:#ecfdf3;border-radius:0.2rem;"></div>
+                </div>
+                <div style="height:5px;background:#f0f0f0;border-radius:3px;"></div>
+              </div>
+            </div>
+            <h3 class="t-14 mt-3 font-semibold">Signal Detection</h3>
+            <p class="t-12 gray mt-1">Analytics, behavioral patterns, and qualitative research surfacing real user needs.</p>
+          </article>
+          <!-- Card 2 -->
+          <article class="card p-3">
+            <div class="frame" style="height:100px;padding:1rem;background:linear-gradient(135deg,#dde5ee,#cad8e8);">
+              <div style="background:white;border-radius:0.3rem;padding:0.6rem;height:100%;display:flex;flex-direction:column;gap:6px;box-shadow:0 8px 16px rgba(97,167,255,0.12);">
+                <div style="height:6px;width:40%;background:#c7d4f0;border-radius:3px;"></div>
+                <div style="flex:1;display:flex;flex-direction:column;gap:3px;justify-content:center;">
+                  <div style="height:5px;background:#dce6fa;border-radius:3px;"></div>
+                  <div style="height:5px;width:80%;background:#f0f4ff;border-radius:3px;"></div>
+                  <div style="height:5px;width:60%;background:#dce6fa;border-radius:3px;"></div>
+                </div>
+              </div>
+            </div>
+            <h3 class="t-14 mt-3 font-semibold">Prioritization &amp; Roadmap</h3>
+            <p class="t-12 gray mt-1">Evidence-based sequencing that connects user problems to business outcomes.</p>
+          </article>
+          <!-- Card 3 -->
+          <article class="card p-3">
+            <div class="frame" style="height:100px;padding:1rem;background:linear-gradient(135deg,#e4dcf0,#d2c0e7);">
+              <div style="background:white;border-radius:0.3rem;padding:0.6rem;height:100%;display:flex;flex-direction:column;gap:6px;box-shadow:0 8px 16px rgba(229,156,218,0.12);">
+                <div style="height:6px;width:55%;background:#d2c0e7;border-radius:3px;"></div>
+                <div style="flex:1;display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px;align-items:end;">
+                  <div style="background:#d2c0e7;border-radius:2px;height:50%;"></div>
+                  <div style="background:#e4dcf0;border-radius:2px;height:80%;"></div>
+                  <div style="background:#d2c0e7;border-radius:2px;height:60%;"></div>
+                </div>
+              </div>
+            </div>
+            <h3 class="t-14 mt-3 font-semibold">Phased Rollout Safety</h3>
+            <p class="t-12 gray mt-1">Controlled releases with feedback loops, feature flags, and measurable success criteria.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- SEE IT WORK -->
+      <section class="section card p-5">
+        <div style="text-align:center;margin-bottom:2rem;">
+          <p class="eyebrow">Case Studies</p>
+          <h2 class="t-32 mt-2">See It Work</h2>
+        </div>
+        <div class="frame p-5" style="min-height:180px;" id="work">
+          <div style="background:white;border-radius:0.4rem;padding:1.5rem;box-shadow:0 12px 24px rgba(0,0,0,0.06);">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;">
+              <div>
+                <div style="height:7px;width:100px;background:#ececec;border-radius:4px;margin-bottom:6px;"></div>
+                <div style="height:7px;width:160px;background:#f3d8d0;border-radius:4px;"></div>
+              </div>
+              <div style="display:flex;gap:0.4rem;">
+                <span style="font-size:0.6rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;background:#f0f0f0;padding:3px 8px;border-radius:20px;color:#888;">Portfolio</span>
+                <span style="font-size:0.6rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;background:#ecfdf3;padding:3px 8px;border-radius:20px;color:#027a48;">4 Projects</span>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0.75rem;">
+              <div style="background:#f7f7f7;border-radius:0.35rem;padding:0.75rem;border:1px solid #eee;">
+                <div style="height:40px;background:linear-gradient(135deg,#dbe8df,#c9ded0);border-radius:0.25rem;margin-bottom:0.5rem;"></div>
+                <div style="height:5px;background:#e0e0e0;border-radius:2px;margin-bottom:3px;"></div>
+                <div style="height:5px;width:70%;background:#eeeeee;border-radius:2px;"></div>
+              </div>
+              <div style="background:#f7f7f7;border-radius:0.35rem;padding:0.75rem;border:1px solid #eee;">
+                <div style="height:40px;background:linear-gradient(135deg,#dde5ee,#cad8e8);border-radius:0.25rem;margin-bottom:0.5rem;"></div>
+                <div style="height:5px;background:#e0e0e0;border-radius:2px;margin-bottom:3px;"></div>
+                <div style="height:5px;width:80%;background:#eeeeee;border-radius:2px;"></div>
+              </div>
+              <div style="background:#f7f7f7;border-radius:0.35rem;padding:0.75rem;border:1px solid #eee;">
+                <div style="height:40px;background:linear-gradient(135deg,#e4dcf0,#d2c0e7);border-radius:0.25rem;margin-bottom:0.5rem;"></div>
+                <div style="height:5px;background:#e0e0e0;border-radius:2px;margin-bottom:3px;"></div>
+                <div style="height:5px;width:60%;background:#eeeeee;border-radius:2px;"></div>
+              </div>
+              <div style="background:#f7f7f7;border-radius:0.35rem;padding:0.75rem;border:1px solid #eee;">
+                <div style="height:40px;background:linear-gradient(135deg,#eadbcf,#dcc3aa);border-radius:0.25rem;margin-bottom:0.5rem;"></div>
+                <div style="height:5px;background:#e0e0e0;border-radius:2px;margin-bottom:3px;"></div>
+                <div style="height:5px;width:75%;background:#eeeeee;border-radius:2px;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PORTFOLIO PROJECTS: 2x2 grid -->
+      <section class="section card p-5">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;">
+          <div>
+            <p class="eyebrow">Portfolio</p>
+            <h2 class="t-24 mt-1">Product Case Studies</h2>
+          </div>
+          <span class="t-12 gray">01 — 04</span>
+        </div>
+        <div class="col-2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:0.75rem;">
+          <article class="card p-3">
+            <div class="frame" style="height:100px;background:linear-gradient(135deg,#dbe8df,#c9ded0);"></div>
+            <h3 class="t-14 mt-3 font-semibold">Custom Pay Rates</h3>
+            <p class="t-12 gray mt-1">Automated complex labor law logic for U.S. market — enterprise workforce tech.</p>
+            <a class="pill-dark mt-3" style="display:inline-flex;" href="Resources/Portfolio 1" target="_blank">Open Project</a>
+          </article>
+          <article class="card p-3">
+            <div class="frame" style="height:100px;background:linear-gradient(135deg,#dde5ee,#cad8e8);"></div>
+            <h3 class="t-14 mt-3 font-semibold">Crew Scheduling Vision</h3>
+            <p class="t-12 gray mt-1">2-year product vision for enterprise operations — roadmap, constraints, and sequencing.</p>
+            <a class="pill-dark mt-3" style="display:inline-flex;" href="Resources/Protfolio Project 2" target="_blank">Open Project</a>
+          </article>
+          <article class="card p-3">
+            <div class="frame" style="height:100px;background:linear-gradient(135deg,#e4dcf0,#d2c0e7);"></div>
+            <h3 class="t-14 mt-3 font-semibold">Vendor Communication Hub</h3>
+            <p class="t-12 gray mt-1">Centralized workflow without forcing vendor tooling changes — zero-friction adoption.</p>
+            <a class="pill-dark mt-3" style="display:inline-flex;" href="Resources/Portfolio 3" target="_blank">Open Project</a>
+          </article>
+          <article class="card p-3">
+            <div class="frame" style="height:100px;background:linear-gradient(135deg,#eadbcf,#dcc3aa);"></div>
+            <h3 class="t-14 mt-3 font-semibold">Relocation AI Agents</h3>
+            <p class="t-12 gray mt-1">Multi-agent AI architecture with retrieval, evaluation, and human-in-the-loop layers.</p>
+            <a class="pill-dark mt-3" style="display:inline-flex;" href="Resources/Portfolio 4" target="_blank">Open Project</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- EVERY TEAM: text left + 2x2 grid right -->
+      <section class="section card p-5">
+        <div class="col-2" style="display:grid;grid-template-columns:1fr 1.2fr;gap:2rem;align-items:start;">
+          <div>
+            <p class="eyebrow">Alignment</p>
+            <h2 class="t-32 mt-2" style="max-width:280px;">Every Team, Every Decision, Product-Led</h2>
+            <p class="t-14 mt-3" style="color:#555;max-width:320px;">
+              I build product systems that connect research, delivery, GTM, and operations — so no critical decision gets trapped in side channels or Slack threads.
+            </p>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;">
+            <article class="card p-3">
+              <div class="frame" style="height:64px;background:#f7f7f7;"></div>
+              <p class="t-12 mt-2 font-semibold">Decision Logs</p>
+            </article>
+            <article class="card p-3">
+              <div class="frame" style="height:64px;background:#f7f7f7;"></div>
+              <p class="t-12 mt-2 font-semibold">Roadmaps</p>
+            </article>
+            <article class="card p-3">
+              <div class="frame" style="height:64px;background:#f7f7f7;"></div>
+              <p class="t-12 mt-2 font-semibold">Experiments</p>
+            </article>
+            <article class="card p-3">
+              <div class="frame" style="height:64px;background:#f7f7f7;"></div>
+              <p class="t-12 mt-2 font-semibold">Release Health</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- BUILT ON PM INFRASTRUCTURE: text left + dark code panel right -->
+      <section class="section card p-5" id="skills">
+        <div class="col-2" style="display:grid;grid-template-columns:1fr 1.1fr;gap:2rem;align-items:center;">
+          <div>
+            <p class="eyebrow">Technical PM</p>
+            <h2 class="t-32 mt-2" style="max-width:280px;">Built on Judgment, Not Just Backlogs</h2>
+            <p class="t-14 mt-3" style="color:#555;max-width:320px;">
+              The strongest work here combines product thinking, behavioral signal reading, and implementation awareness across engineering-heavy and AI-integrated systems.
+            </p>
+            <a class="pill-dark mt-4" style="display:inline-flex;" href="Resources/Profile (1).pdf" target="_blank">Read Profile</a>
+          </div>
+          <!-- Dark code panel -->
+          <div style="border-radius:0.5rem;border:1px solid #242a36;background:#121620;padding:1.25rem;color:white;">
+            <div style="display:flex;gap:0.4rem;margin-bottom:1rem;">
+              <span style="height:8px;width:8px;border-radius:50%;background:#ef775a;"></span>
+              <span style="height:8px;width:8px;border-radius:50%;background:#f5b39d;"></span>
+              <span style="height:8px;width:8px;border-radius:50%;background:#cccccc;"></span>
+            </div>
+            <div class="t-12 mono" style="display:flex;flex-direction:column;gap:0.5rem;color:rgba(255,255,255,0.78);">
+              <div style="background:rgba(255,255,255,0.06);border-radius:0.3rem;padding:0.5rem 0.75rem;">if signal.indicates("manual_workaround") → investigate root cause</div>
+              <div style="background:rgba(255,255,255,0.06);border-radius:0.3rem;padding:0.5rem 0.75rem;">if risk == "high" → gate release with phased rollout</div>
+              <div style="background:rgba(255,255,255,0.06);border-radius:0.3rem;padding:0.5rem 0.75rem;">if ai_involved → enforce human review checkpoint</div>
+              <div style="background:rgba(255,255,255,0.06);border-radius:0.3rem;padding:0.5rem 0.75rem;">if stakeholder_pressure → revalidate against user evidence</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ENGINEERED FOR: centered with 3 circles -->
+      <section class="section card p-6" style="text-align:center;">
+        <p class="eyebrow" style="text-align:center;">Background</p>
+        <div style="display:flex;justify-content:center;gap:0.75rem;margin:1.5rem 0;">
+          <div style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#f5b39d,#ef775a);border:2px solid white;box-shadow:0 4px 12px rgba(239,119,90,0.3);"></div>
+          <div style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#c7d4f0,#61a7ff);border:2px solid white;box-shadow:0 4px 12px rgba(97,167,255,0.3);margin-top:-8px;"></div>
+          <div style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#d4edda,#027a48);border:2px solid white;box-shadow:0 4px 12px rgba(2,122,72,0.2);"></div>
+        </div>
+        <h2 class="t-40" style="max-width:480px;margin:0 auto;">Built for Fast-Moving Product Teams</h2>
+        <p class="t-14 mt-3" style="max-width:420px;margin:0 auto;color:#555;">
+          Background in enterprise SaaS, AI products, and operational software — with experience bridging business strategy, engineering constraints, and real user needs.
+        </p>
+        <div class="mt-4 flex gap-2" style="justify-content:center;">
+          <a class="pill-dark" href="Resources/CV_Johannes_schmid_2025.pdf" download>Download CV</a>
+          <a class="pill-outline" href="Resources/Profile (1).pdf" target="_blank">View Profile</a>
+        </div>
+      </section>
+
+      <!-- BOTTOM GRADIENT CTA -->
+      <section class="section gradient-cta p-6" id="contact" style="position:relative;">
+        <div class="col-2" style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;position:relative;z-index:1;">
+          <div>
+            <span class="pill" style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.9);">Let's Talk</span>
+            <h2 class="t-40 mt-3" style="color:white;max-width:320px;">See My Work On Your Product Challenge</h2>
+            <p class="t-14 mt-3" style="color:rgba(255,255,255,0.72);max-width:340px;">Open to PM roles, product strategy consulting, and AI product work. Let's talk about what you're building.</p>
+            <div class="mt-4 flex gap-2">
+              <a class="pill-dark" href="mailto:schmid.johannes90@gmail.com">Get in Touch</a>
+              <a class="pill" href="Resources/CV_Johannes_schmid_2025.pdf" download>Download CV</a>
+            </div>
+          </div>
+          <!-- Contact form / dark panel -->
+          <div style="background:rgba(0,0,0,0.32);border:1px solid rgba(255,255,255,0.1);border-radius:0.5rem;padding:1.25rem;">
+            <div style="display:flex;flex-direction:column;gap:0.6rem;">
+              <input type="text" placeholder="Your Name"
+                style="width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:0.4rem;padding:0.6rem 0.75rem;font:inherit;font-size:0.78rem;color:white;outline:none;"
+                onfocus="this.style.borderColor='rgba(255,255,255,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'"
+              />
+              <input type="email" placeholder="Your Email"
+                style="width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:0.4rem;padding:0.6rem 0.75rem;font:inherit;font-size:0.78rem;color:white;outline:none;"
+                onfocus="this.style.borderColor='rgba(255,255,255,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'"
+              />
+              <textarea placeholder="Your Message" rows="3"
+                style="width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:0.4rem;padding:0.6rem 0.75rem;font:inherit;font-size:0.78rem;color:white;resize:none;outline:none;"
+                onfocus="this.style.borderColor='rgba(255,255,255,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'"
+              ></textarea>
+              <button type="submit" class="pill-dark" style="align-self:flex-start;">Send Message</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </main>
+
+    <!-- FOOTER -->
+    <footer class="footer py-5">
+      <div class="page" style="display:flex;align-items:center;justify-content:space-between;">
+        <span class="t-12 font-bold" style="color:white;">Johannes Schmid</span>
+        <div class="t-12 flex gap-4" style="color:#8892a4;">
+          <a href="#about">About</a>
+          <a href="#work">Work</a>
+          <a href="https://www.linkedin.com/in/johannes-schmid/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="mailto:schmid.johannes90@gmail.com">Email</a>
+          <a href="Resources/CV_Johannes_schmid_2025.pdf" download>Download CV</a>
+        </div>
+      </div>
+    </footer>
+
   </body>
 </html>

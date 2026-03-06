@@ -1,0 +1,419 @@
+Relocation AI Agent
+Problem Statement, Strategic Context & Solution Proposal
+(Settly AI Agent Platform)
+Strategic Context
+Settly’s long-term vision is to scale relocation services through a platform-first operational model, where workflows, knowledge, and communication are embedded into the product rather than distributed across internal teams.
+However, a structural challenge became clear:
+Many of the most time-consuming relocation activities — answering immigration questions, coordinating travel bookings, and supporting document completion — still rely heavily on manual knowledge work performed by operations teams.
+This creates three strategic limitations.
+Operational scaling limits
+Relocation services rely on domain experts (immigration specialists, hosts, operations teams) answering repetitive questions and managing structured processes.
+Scaling this model linearly requires hiring more specialists.
+Knowledge fragmentation
+Critical knowledge is spread across:
+internal Slack channels
+
+
+past cases
+
+
+immigration experts
+
+
+government websites and forms
+
+
+vendor systems
+
+
+This makes consistent answers difficult and slows down operations.
+Platform opportunity for AI augmentation
+If Settly can centralize this knowledge and operational reasoning inside the platform, it unlocks:
+automated guidance for users
+
+
+AI-assisted responses for hosts
+
+
+consistent policy interpretation
+
+
+reduced reliance on individual experts
+
+
+This aligns directly with Settly’s broader platform strategy:
+transform operational knowledge into scalable platform capabilities.
+
+My Role
+As Product Manager driving the AI Agent platform exploration, I focused on translating operational workflows into AI-compatible system architectures.
+My responsibilities included:
+Identifying high-impact operational workflows where AI could meaningfully reduce manual work
+
+
+Designing a multi-agent system architecture around relocation workflows
+
+
+Defining the orchestration layer responsible for routing tasks between agents
+
+
+Designing the evaluation and benchmarking framework to measure model performance
+
+
+Working with engineering to prototype the first operational agents
+
+
+Coordinating domain experts (immigration specialists, hosts) to supply ground-truth datasets
+
+
+The goal was not simply to build a chatbot.
+The objective was to design a scalable AI capability layer based on an orchestrated multi-agent architecture embedded directly into Settly’s operational platform.
+
+Product Context
+Relocation management involves many operational workflows that follow structured but knowledge-heavy processes, such as:
+Travel coordination
+Hosts coordinate flight bookings between:
+the user
+
+
+the vendor
+
+
+internal teams
+
+
+While the process is structured, it still involves manual communication steps and message drafting.
+Immigration guidance
+Immigration cases generate large volumes of repetitive questions, including:
+visa timelines
+
+
+required documents
+
+
+form completion
+
+
+eligibility rules
+
+
+travel restrictions during pending applications
+
+
+Many answers rely on a combination of official sources (e.g., IND), internal knowledge, and historical case context.
+Document and form support
+Users frequently request clarification on immigration forms, even though instructions are often embedded within the documents themselves.
+
+Across these workflows we observed consistent characteristics:
+high question volume
+
+
+repetitive tasks
+
+
+domain-specific knowledge
+
+
+structured operational workflows
+
+
+significant risk if answers are incorrect
+
+
+This made them strong candidates for AI-assisted workflow automation, provided the system could maintain high reliability and traceability.
+
+Problem Identification
+1) Knowledge work does not scale linearly
+Immigration and relocation expertise currently resides with specific specialists.
+When questions arise:
+operations teams ask experts in Slack
+
+
+experts consult government resources
+
+
+answers are manually written and sent
+
+
+This process repeats across many similar cases.
+Without systematizing this reasoning process, Settly cannot scale expertise efficiently.
+
+2) Critical information exists across many sources
+Immigration answers often require combining multiple inputs:
+official government websites
+
+
+immigration law guidance
+
+
+internal operational knowledge
+
+
+previous cases
+
+
+In many situations the correct answer is not explicitly available in a single source, but must be derived through interpretation and domain expertise.
+This makes rule-based automation infeasible, and instead requires retrieval-augmented reasoning systems.
+
+3) AI systems must balance correctness and usability
+In this domain, errors have different levels of severity.
+Minor issues:
+tone of response
+
+
+formatting
+
+
+wording
+
+
+Critical issues:
+incorrect immigration advice
+
+
+wrong visa requirements
+
+
+incorrect legal interpretation
+
+
+This means evaluation must prioritize factual correctness and policy compliance over stylistic quality.
+To address this, we designed a structured evaluation pipeline with domain-expert reference answers (“golden answers”) and automated scoring metrics.
+
+4) Some workflows combine knowledge with system actions
+Certain tasks require system interaction, such as checking case status in government portals.
+These workflows require:
+authenticated systems
+
+
+multi-step navigation
+
+
+case-specific data
+
+
+This means the system must determine when to answer autonomously and when to escalate to human operators, a common design consideration in human-in-the-loop AI systems.
+
+5) Reliable AI requires structured evaluation infrastructure
+Unlike traditional product features, AI systems require continuous evaluation and iteration.
+During development we observed:
+prompt adjustments significantly affect model behavior
+
+
+evaluation datasets must evolve as new edge cases appear
+
+
+model performance improves through structured benchmarking
+
+
+To address this, we implemented an evaluation framework based on curated datasets, golden answers, and automated scoring metrics, enabling systematic model improvement and regression testing.
+
+Activities
+To tackle these challenges, I led work across four tracks.
+
+1) Workflow discovery with domain experts
+We mapped how immigration specialists and hosts answer real questions.
+This involved:
+collecting real questions from internal communication channels
+
+
+identifying the most frequent request types
+
+
+mapping which sources are consulted to construct answers
+
+
+This process helped identify where AI agents could augment existing workflows.
+
+2) Multi-Agent Architecture Design
+Instead of building a single general-purpose assistant, we designed an orchestrated multi-agent architecture.
+Each operational workflow is handled by a specialized agent:
+Travel Booking Agent
+
+
+Immigration Guidance Agent
+
+
+Document Support Agent
+
+
+A central agent orchestrator determines which agent should handle a request and provides the necessary context.
+This architecture improves:
+modularity
+
+
+domain accuracy
+
+
+system scalability
+
+
+It also aligns with modern multi-agent LLM system design patterns.
+
+3) AI Evaluation Framework
+To measure performance, we implemented an evaluation system using:
+curated datasets of real questions
+
+
+expert-written “golden answers”
+
+
+automated evaluation metrics (accuracy, relevance, tone)
+
+
+This enabled quantitative benchmarking of agent performance and systematic improvement.
+
+4) Gradual Prototyping and Human-in-the-Loop Deployment
+Instead of fully automating responses immediately, we introduced AI in assisted workflows:
+agents generate draft responses
+
+
+hosts review and edit
+
+
+approved responses are sent to users
+
+
+This approach allowed safe deployment while collecting real-world performance data.
+
+The Solution
+The resulting system is an AI Agent Platform built on an orchestrated multi-agent architecture.
+The platform combines:
+specialized AI agents
+
+
+retrieval-based knowledge systems
+
+
+structured workflow logic
+
+
+evaluation infrastructure
+
+
+
+1) Domain-Specific AI Agents
+Each workflow is handled by a specialized agent:
+Travel Agent
+Handles vendor communication and travel booking coordination.
+Immigration Agent
+Provides immigration guidance using trusted sources and expert knowledge.
+Document Agent
+Answers questions about forms and documentation.
+This specialization reduces ambiguity and improves answer quality.
+
+2) Retrieval-Based Knowledge Layer
+Instead of relying on the open internet, the system prioritizes trusted knowledge sources.
+Primary sources
+official government websites (e.g., IND)
+
+
+Secondary sources
+immigration law firm guidance
+
+
+internal documentation
+
+
+This creates a tiered knowledge retrieval system, improving reliability and traceability.
+
+3) Human-in-the-Loop Operation
+To maintain operational safety, the system initially operates with human oversight.
+AI generates response drafts
+Hosts review and approve
+Feedback is used to improve the system
+This pattern is common in enterprise AI deployments where correctness is critical.
+
+4) Continuous Evaluation Loop
+The system includes a structured improvement cycle:
+collect real questions
+
+
+compare AI responses with expert answers
+
+
+identify failure patterns
+
+
+refine prompts and system architecture
+
+
+This ensures measurable improvement over time.
+
+Outcome & Early Signals
+Early prototypes demonstrated several promising signals:
+agents can draft operational responses with strong contextual awareness
+
+
+evaluation metrics improve through iterative prompt tuning
+
+
+domain experts can systematically validate AI outputs
+
+
+The evaluation framework also provides visibility into:
+where agents perform reliably
+
+
+where additional training data or prompt adjustments are required
+
+
+
+Why This Initiative Matters
+This project is not simply about adding AI features.
+It is about transforming operational knowledge into scalable platform infrastructure.
+The AI agent platform enables:
+Operational scalability
+Expert reasoning can be reused across thousands of relocation cases.
+Faster user support
+Users receive faster responses without waiting for specialists.
+Knowledge centralization
+Operational expertise becomes embedded in the platform instead of residing with individuals.
+Foundation for intelligent automation
+Once workflows and knowledge are structured, the platform can support:
+automated case guidance
+
+
+proactive notifications
+
+
+workflow orchestration
+
+
+intelligent document processing
+
+
+
+In Summary
+By introducing an orchestrated multi-agent architecture with structured evaluation and retrieval systems, Settly can transform operational expertise into scalable product capabilities.
+AI agents become a platform layer that augments relocation workflows, enabling the company to scale complex global mobility services without proportional growth in operational headcount.
+
+
+References and Links: 
+https://rentman.io/product-updates/custom-pay-rates
+
+
+Cluster Mapping of most common topics
+
+Total Message Volume of by topics
+
+AI automated answer volumn travel agent before and after
+
+
+Review of traces and error analysis 
+
+
+Improvement loop Settly AI Agent
+
+
+
+
+
+
+Solution: Vendor Communication User, combined
+
+
+
+
+
+
+NEEDS SOME MORE PICTURES TO SUPPORT THE CLAIMS AND FLOW

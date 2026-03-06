@@ -1,0 +1,285 @@
+Vendor Communication
+Problem Statement, Strategic Context & Solution Proposal
+Strategic Context
+At the time of development, a strategic risk was becoming obvious:
+Settly’s product value gets diluted whenever communication and documents move off-platform.
+Settly’s differentiation is not “we can email vendors.”
+It’s that we provide a central hub for relocation work: timelines, documents, milestones, next steps, and (increasingly) automation.
+Two strategic drivers made this urgent:
+Internationalisation Strategy (scale through vendor networks)
+
+ As we expand internationally, we rely more on external vendors to deliver services in markets where we don’t have deep operational presence. A scalable vendor network becomes a first layer of international scaling.
+
+
+Platform value and automation strategy
+
+ A centralized workflow is the prerequisite to unlock:
+
+
+automation (reminders, routing, status updates)
+
+
+AI assistance (template generation, policy checks, summarisation, next-step recommendations)
+
+
+operational control (shared visibility, fewer handovers breaking cases)
+
+
+In other words: without centralization of communication + documents, Settly can’t fully behave like a platform.
+
+My Role
+As PM on Vendor Communication / Off-Platform Communications, I:
+Mapped the end-to-end operational workflows (host ↔ vendor ↔ user ↔ client)
+
+
+Defined the product strategy around centralisation first, automation second
+
+
+Worked with Design and Engineering to prototype “plug into email” approaches
+
+
+Structured a gradual transition plan to avoid breaking high-volume workflows
+
+
+Drove decisions around what must be structured data (vendor directory, status) vs what can remain unstructured (emails, attachments)
+
+
+My goal:
+Move a critical workflow into the platform without forcing vendors to “join another tool.”
+
+Product Context
+Settly supports complex relocation cases that require daily coordination with a large vendor ecosystem.
+In reality, we are dealing with:
+hundreds of vendors across services
+
+
+very uneven frequency: some vendors are used daily, others only a few times per year
+
+
+unpredictable workflows based on vendor category, market, and internal vendor systems
+
+
+A key constraint emerged early:
+Onboarding every vendor to a platform is not feasible.
+Vendors already operate in their own systems (ticketing tools, CRMs, reservation systems, shared inboxes). We needed to plug into existing workflows, not replace them.
+At the same time, current internal workflows for hosts were fragmented:
+communication lives across multiple inboxes and threads
+
+
+information and context are split between the Settly platform, spreadsheets, policies, and email chains
+
+
+hosts constantly switch tools and copy/paste case information back and forth
+
+
+This creates operational drag, errors, and reduced visibility for anyone not sitting inside that host’s inbox.
+
+Problem Identification
+1) Fragmentation destroys platform value
+When vendor communication happens in email, Settly loses the “hub” effect:
+the platform stops being the source of truth
+
+
+documents scatter across inboxes and drives
+
+
+case progress becomes harder to understand for other stakeholders
+
+
+This is especially harmful internationally, where we need the platform to provide structure and confidence across unfamiliar markets.
+2) Vendors can’t be forced to change behavior
+We operate in a world where:
+some vendors interact through shared inboxes
+
+
+others spawn entirely new email threads later in the process
+
+
+many are backed by internal systems that reduce predictability
+
+
+This makes “perfect” communication orchestration unrealistic.
+We need resilient workflows that can tolerate messy vendor behaviors.
+3) Internal teams suffer from switch-tasking and manual transfer
+Hosts often have to:
+manually copy case details from the platform into emails
+
+
+chase approvals and replies across multiple threads
+
+
+update statuses manually back in the platform
+
+
+reconcile vendor information across spreadsheets, policies, and emails 
+
+
+This creates:
+high operational load
+
+
+inconsistent tracking
+
+
+loss of continuity when hosts are out of office
+
+
+4) Inconsistent vendor data compounds the problem
+Vendor information is stored in inconsistent formats and locations (spreadsheets, policies, drive folders), forcing hosts to cross-check multiple sources to find the right vendor and context. 
+This becomes a scaling blocker as vendor complexity increases across markets.
+5) This is a high-volume, unpredictable workflow → transition must be gradual
+Vendor comms is not a “nice-to-have flow.”
+It’s a critical operational workflow with:
+high volume
+
+
+high variance
+
+
+real consequences if something breaks
+
+
+So the move to platform-native communication had to be incremental and controlled, not a big-bang migration.
+
+Activities
+To solve this, I led work across three tracks:
+Discovery & workflow mapping
+
+
+mapped current vendor communication patterns (relay vs direct workflows)
+
+
+captured failure modes: new threads, missing CCs, handovers, lost context
+
+
+System design & product definition
+
+
+defined what needed to become structured (vendor entities, status, linking to cases/services)
+
+
+defined what could remain unstructured but centralized (email content, attachments, replies)
+
+
+Feasibility exploration
+
+
+validated that “email-first integration” could work technically and operationally
+
+
+explored how to create reliable linking between vendor emails and case threads
+
+
+
+The Solution
+We designed the solution around a core principle:
+Centralize communication and documents inside Settly, while letting vendors keep using email.
+1) Plug into existing workflows with email-based threading
+Instead of onboarding vendors onto Settly, we connected communication flows through:
+email initiation from within the platform
+
+
+vendor replies captured back into the platform thread
+
+
+shared visibility across the internal team (instead of trapped in one host inbox)
+
+
+This directly addresses the reality that vendor systems and habits are unpredictable.
+2) Centralize documents as part of the communication loop
+The user (and hosts) can share documents from the platform vault into the vendor conversation—reducing re-uploading and scattered attachments.
+This reinforces the “hub” model:
+the platform holds documents
+
+
+communication references the platform’s source of truth
+
+
+3) Templates + variables to remove copy/paste behavior
+Initiation emails can be generated using templates with case variables, reducing manual assembly and improving consistency.
+4) Gradual rollout with host-controlled activation
+Because this is a high-stakes workflow, the rollout strategy was deliberately conservative:
+release into production
+
+
+let hosts decide when to activate user ↔ vendor comms via platform
+
+
+start with pilot users where we can guarantee app version compatibility
+
+
+expand usage once stability is validated
+
+
+This aligns with the principle that transition must happen gradually.
+5) Vendor management foundation
+In parallel, we anchored the system in structured vendor data so that:
+vendors can be connected to companies/services
+
+
+preferred vendors can be surfaced
+
+
+later automation/reporting becomes possible
+
+
+This directly addresses the “reconciling across spreadsheets/policies/email” issue. 
+
+Outcome & Early Signals
+From stakeholder feedback and early rollout signals:
+The platform approach enables centralization without vendor onboarding friction
+
+
+It unlocks a pathway to automation and AI leverage because communication is now “in-system”
+
+
+Early adoption signal: ~70% of vendors added to the platform had email communication connected (with remaining edge cases to solve through workflow coverage and operational rollout)
+
+
+
+Why This Initiative Mattered
+This project wasn’t “an email feature.”
+It was a strategic enabler for:
+International scaling: vendor network becomes the delivery layer; Settly remains the coordination layer
+
+
+Platform value retention: keep documents + conversations + next steps in one hub
+
+
+Automation and AI leverage: once comms is centralized, we can add reminders, summarisation, policy checks, routing, and proactive assistance
+
+
+Operational resilience: reduce dependence on individual inboxes and reduce handover risk
+
+
+In short:
+Centralisation of communication and documents is a prerequisite for scaling Settly internationally and for unlocking the next wave of AI-driven operational control.
+
+
+References and Links: 
+https://rentman.io/product-updates/custom-pay-rates
+
+
+Example flow of vendor communication before with external email client
+
+
+Switch tasking between different system for users and host from platform to mail system
+
+
+
+External Spreadsheet for keeping track of vendor policies 
+
+
+Mixpanel: Retention Curve NL market vs UK Market
+
+Solution: Vendor Management / Solution: Vendor Communication Host
+
+
+
+
+Solution: Vendor Communication User, combined
+
+
+
+
+NEEDS SOME MORE PICTURES TO SUPPORT THE CLAIMS AND FLOW
